@@ -1,7 +1,9 @@
 package com.paneedah.mwc.equipment.inventory.carryable.backpack;
 
 import com.paneedah.weaponlib.inventory.BackpackInventoryTab;
+import com.paneedah.weaponlib.inventory.BackpackTab;
 import com.paneedah.weaponlib.inventory.InventoryTabs;
+import micdoodle8.mods.galacticraft.api.client.tabs.TabRegistry;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.gui.inventory.GuiInventory;
 import net.minecraft.util.ResourceLocation;
@@ -28,10 +30,8 @@ public class GuiBackpack extends GuiContainer {
     public void initGui() {
         super.initGui();
 
-        final InventoryTabs inventoryTabs = InventoryTabs.getInstance();
-
-        inventoryTabs.updateTabValues(guiLeft, guiTop, BackpackInventoryTab.class);
-        inventoryTabs.addTabsToList(this.buttonList);
+        TabRegistry.updateTabValues(this.guiLeft, this.guiTop, BackpackTab.class);
+        TabRegistry.addTabsToList(this.buttonList);
     }
 
     @Override

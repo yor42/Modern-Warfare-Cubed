@@ -12,15 +12,15 @@ import com.paneedah.weaponlib.crafting.ammopress.TileEntityAmmoPress;
 import com.paneedah.weaponlib.crafting.ammopress.model.AmmoPress;
 import com.paneedah.weaponlib.crafting.workbench.TESRWorkbench;
 import com.paneedah.weaponlib.crafting.workbench.TileEntityWorkbench;
-import com.paneedah.weaponlib.inventory.BackpackInventoryTab;
-import com.paneedah.weaponlib.inventory.CustomPlayerInventoryTab;
-import com.paneedah.weaponlib.inventory.InventoryTabs;
-import com.paneedah.weaponlib.inventory.StandardPlayerInventoryTab;
+import com.paneedah.weaponlib.inventory.*;
+import micdoodle8.mods.galacticraft.api.client.tabs.InventoryTabVanilla;
+import micdoodle8.mods.galacticraft.api.client.tabs.TabRegistry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemModelMesher;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.ForgeModContainer;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -41,11 +41,11 @@ public class ClientProxy extends CommonProxy {
     public void preInit(final MWC mod) {
         super.preInit(mod);
 
-        final InventoryTabs inventoryTabs = InventoryTabs.getInstance();
+        //final InventoryTabs inventoryTabs = InventoryTabs.getInstance();
 
-        inventoryTabs.registerTab(new StandardPlayerInventoryTab());
-        inventoryTabs.registerTab(new CustomPlayerInventoryTab(MWC.modContext, MWCItems.vestRender));
-        inventoryTabs.registerTab(new BackpackInventoryTab(MWC.modContext));
+        //inventoryTabs.registerTab(new StandardPlayerInventoryTab());
+        //inventoryTabs.registerTab(new CustomPlayerInventoryTab(MWC.modContext, MWCItems.vestRender));
+        //inventoryTabs.registerTab(new BackpackInventoryTab(MWC.modContext));
 
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityWorkbench.class, new TESRWorkbench(new Workbench(), new ResourceLocation(ID + ":textures/blocks/workbench.png")));
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityAmmoPress.class, new TESRAmmoPress(new AmmoPress(), new ResourceLocation(ID + ":textures/blocks/ammo_press.png")));
@@ -113,6 +113,13 @@ public class ClientProxy extends CommonProxy {
             if (ForgeModContainer.allowEmissiveItems)
                 ForgeModContainer.allowEmissiveItems = false;
         } catch (NoSuchFieldError ignored) {}
+
+        if(TabRegistry.getTabList().isEmpty()) {
+            MinecraftForge.EVENT_BUS.register(new TabRegistry());
+            TabRegistry.registerTab(new InventoryTabVanilla());
+        }
+        TabRegistry.registerTab(new BackpackTab());
+        TabRegistry.registerTab(new CustomInventoryTab());
 
         MC.getRenderManager().getSkinMap().forEach((model, playerRenderer) -> playerRenderer.addLayer(new EquipmentRenderer(playerRenderer)));
     }
