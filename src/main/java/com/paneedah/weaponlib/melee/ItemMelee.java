@@ -240,7 +240,7 @@ public class ItemMelee extends Item implements
 
     Builder builder;
 
-    private ModContext modContext;
+    private final ModContext modContext;
 
     private SoundEvent attackSound;
     private SoundEvent silencedShootSound;
@@ -248,9 +248,7 @@ public class ItemMelee extends Item implements
     private SoundEvent unloadSound;
     private SoundEvent ejectSpentRoundSound;
 
-    public static enum State {READY, SHOOTING, RELOAD_REQUESTED, RELOAD_CONFIRMED, UNLOAD_STARTED, UNLOAD_REQUESTED_FROM_SERVER, UNLOAD_CONFIRMED, PAUSED, MODIFYING, EJECT_SPENT_ROUND}
-
-    ;
+    public enum State {READY, SHOOTING, RELOAD_REQUESTED, RELOAD_CONFIRMED, UNLOAD_STARTED, UNLOAD_REQUESTED_FROM_SERVER, UNLOAD_CONFIRMED, PAUSED, MODIFYING, EJECT_SPENT_ROUND}
 
     ItemMelee(Builder builder, ModContext modContext) {
         this.builder = builder;
@@ -298,8 +296,7 @@ public class ItemMelee extends Item implements
 
 
     public static boolean isActiveAttachment(PlayerMeleeInstance weaponInstance, ItemAttachment<ItemMelee> attachment) {
-        return weaponInstance != null ?
-                MeleeAttachmentAspect.isActiveAttachment(attachment, weaponInstance) : false;
+        return weaponInstance != null && MeleeAttachmentAspect.isActiveAttachment(attachment, weaponInstance);
     }
 
     @Override

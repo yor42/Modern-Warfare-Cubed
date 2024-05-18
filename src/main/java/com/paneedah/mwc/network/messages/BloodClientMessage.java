@@ -12,8 +12,8 @@ import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 @AllArgsConstructor
 public final class BloodClientMessage implements IMessage {
 
-    private Vector3F position = new Vector3F();
-    private Vector3F velocity = new Vector3F();
+    private final Vector3F position = new Vector3F();
+    private final Vector3F velocity = new Vector3F();
 
     @Override
     public void fromBytes(final ByteBuf byteBuf) {

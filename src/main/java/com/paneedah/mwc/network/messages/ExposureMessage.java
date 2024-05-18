@@ -16,7 +16,7 @@ import java.util.Collection;
 @AllArgsConstructor
 public final class ExposureMessage implements IMessage {
     
-    private Collection<? extends Exposure> exposures = new ArrayList<>();
+    private final Collection<? extends Exposure> exposures = new ArrayList<>();
 
     @Override
     public void fromBytes(final ByteBuf byteBuf) {

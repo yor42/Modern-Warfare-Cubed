@@ -1078,7 +1078,7 @@ public class M4A1Factory implements GunFactory {
 				// Standard Iron Sight Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), AuxiliaryAttachments.AR15Iron)) {
 					//System.out.println("Position me for Acog");
-				    RenderContext<?> rc = (RenderContext<?>) renderContext;
+				    RenderContext<?> rc = renderContext;
                     ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                             AttachmentCategory.RECEIVER, rc.getWeaponInstance());
                     if(activeAttachment == Attachments.AR57Receiver) {
@@ -1091,7 +1091,7 @@ public class M4A1Factory implements GunFactory {
 				// Standard Iron Sight Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.TritiumRearSights)) {
 					//System.out.println("Position me for Acog");
-				    RenderContext<?> rc = (RenderContext<?>) renderContext;
+				    RenderContext<?> rc = renderContext;
                     ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                             AttachmentCategory.RECEIVER, rc.getWeaponInstance());
                     if(activeAttachment == Attachments.AR57Receiver) {
@@ -1109,7 +1109,7 @@ public class M4A1Factory implements GunFactory {
 				// Standard Iron Sight Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.MicroReflex)) {
 					//System.out.println("Position me for Acog");
-				    RenderContext<?> rc = (RenderContext<?>) renderContext;
+				    RenderContext<?> rc = renderContext;
                     ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                             AttachmentCategory.RECEIVER, rc.getWeaponInstance());
                     if(activeAttachment == Attachments.AR57Receiver) {
@@ -1122,7 +1122,7 @@ public class M4A1Factory implements GunFactory {
 				// Standard Iron Sight Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.NightRaider)) {
                     //System.out.println("Position me for Acog");
-                    RenderContext<?> rc = (RenderContext<?>) renderContext;
+                    RenderContext<?> rc = renderContext;
                     ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                             AttachmentCategory.RECEIVER, rc.getWeaponInstance());
                     if(activeAttachment == Attachments.AR57Receiver) {
@@ -1135,7 +1135,7 @@ public class M4A1Factory implements GunFactory {
 				// Standard Iron Sight Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.AKMIron)) {
 					//System.out.println("Position me for Acog");
-				    RenderContext<?> rc = (RenderContext<?>) renderContext;
+				    RenderContext<?> rc = renderContext;
                     ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                             AttachmentCategory.RECEIVER, rc.getWeaponInstance());
                     if(activeAttachment == Attachments.AR57Receiver) {
@@ -1148,7 +1148,7 @@ public class M4A1Factory implements GunFactory {
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
 					//System.out.println("Position me for Acog");
-				    RenderContext<?> rc = (RenderContext<?>) renderContext;
+				    RenderContext<?> rc = renderContext;
                     ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                             AttachmentCategory.RECEIVER, rc.getWeaponInstance());
                     if(activeAttachment == Attachments.AR57Receiver) {
@@ -1161,7 +1161,7 @@ public class M4A1Factory implements GunFactory {
 				// ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Specter)) {
                     //System.out.println("Position me for Acog");
-                    RenderContext<?> rc = (RenderContext<?>) renderContext;
+                    RenderContext<?> rc = renderContext;
                     ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                             AttachmentCategory.RECEIVER, rc.getWeaponInstance());
                     if(activeAttachment == Attachments.AR57Receiver) {
@@ -1174,7 +1174,7 @@ public class M4A1Factory implements GunFactory {
 				// HP Zoomw
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.LeupoldRailScope)) {
 					//System.out.println("Position me for Acog");
-				    RenderContext<?> rc = (RenderContext<?>) renderContext;
+				    RenderContext<?> rc = renderContext;
                     ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                             AttachmentCategory.RECEIVER, rc.getWeaponInstance());
                     if(activeAttachment == Attachments.AR57Receiver) {
@@ -1187,7 +1187,7 @@ public class M4A1Factory implements GunFactory {
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
 					//System.out.println("Position me for Reflex");
-				    RenderContext<?> rc = (RenderContext<?>) renderContext;
+				    RenderContext<?> rc = renderContext;
                     ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                             AttachmentCategory.RECEIVER, rc.getWeaponInstance());
                     if(activeAttachment == Attachments.AR57Receiver) {
@@ -1200,7 +1200,7 @@ public class M4A1Factory implements GunFactory {
 				// Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.BijiaReflex)) {
                     //System.out.println("Position me for Reflex");
-                    RenderContext<?> rc = (RenderContext<?>) renderContext;
+                    RenderContext<?> rc = renderContext;
                     ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                             AttachmentCategory.RECEIVER, rc.getWeaponInstance());
                     if(activeAttachment == Attachments.AR57Receiver) {
@@ -1213,7 +1213,7 @@ public class M4A1Factory implements GunFactory {
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holographic)) {
 					//System.out.println("Position me for Holo");
-				    RenderContext<?> rc = (RenderContext<?>) renderContext;
+				    RenderContext<?> rc = renderContext;
                     ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                             AttachmentCategory.RECEIVER, rc.getWeaponInstance());
                     if(activeAttachment == Attachments.AR57Receiver) {
@@ -1226,7 +1226,7 @@ public class M4A1Factory implements GunFactory {
 				// Holo Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HolographicAlt)) {
                     //System.out.println("Position me for Holo");
-                    RenderContext<?> rc = (RenderContext<?>) renderContext;
+                    RenderContext<?> rc = renderContext;
                     ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                             AttachmentCategory.RECEIVER, rc.getWeaponInstance());
                     if(activeAttachment == Attachments.AR57Receiver) {
@@ -1239,7 +1239,7 @@ public class M4A1Factory implements GunFactory {
              // Holo Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.EotechHybrid2)) {
                     //System.out.println("Position me for Holo");
-                    RenderContext<?> rc = (RenderContext<?>) renderContext;
+                    RenderContext<?> rc = renderContext;
                     ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                             AttachmentCategory.RECEIVER, rc.getWeaponInstance());
                     if(activeAttachment == Attachments.AR57Receiver) {
@@ -1252,7 +1252,7 @@ public class M4A1Factory implements GunFactory {
 				// Holo Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.VortexRedux)) {
                     //System.out.println("Position me for Holo");
-                    RenderContext<?> rc = (RenderContext<?>) renderContext;
+                    RenderContext<?> rc = renderContext;
                     ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                             AttachmentCategory.RECEIVER, rc.getWeaponInstance());
                     if(activeAttachment == Attachments.AR57Receiver) {
@@ -1265,7 +1265,7 @@ public class M4A1Factory implements GunFactory {
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
 					//System.out.println("Position me for Reflex");
-				    RenderContext<?> rc = (RenderContext<?>) renderContext;
+				    RenderContext<?> rc = renderContext;
                     ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                             AttachmentCategory.RECEIVER, rc.getWeaponInstance());
                     if(activeAttachment == Attachments.AR57Receiver) {
@@ -1278,7 +1278,7 @@ public class M4A1Factory implements GunFactory {
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.KobraGen3)) {
 					//System.out.println("Position me for Reflex");
-				    RenderContext<?> rc = (RenderContext<?>) renderContext;
+				    RenderContext<?> rc = renderContext;
                     ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                             AttachmentCategory.RECEIVER, rc.getWeaponInstance());
                     if(activeAttachment == Attachments.AR57Receiver) {
@@ -1291,7 +1291,7 @@ public class M4A1Factory implements GunFactory {
 				// Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.MicroT1)) {
                     //System.out.println("Position me for Reflex");
-                    RenderContext<?> rc = (RenderContext<?>) renderContext;
+                    RenderContext<?> rc = renderContext;
                     ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                             AttachmentCategory.RECEIVER, rc.getWeaponInstance());
                     if(activeAttachment == Attachments.AR57Receiver) {
@@ -1304,7 +1304,7 @@ public class M4A1Factory implements GunFactory {
              // Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.AimpointCompM5)) {
                     //System.out.println("Position me for Reflex");
-                    RenderContext<?> rc = (RenderContext<?>) renderContext;
+                    RenderContext<?> rc = renderContext;
                     ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                             AttachmentCategory.RECEIVER, rc.getWeaponInstance());
                     if(activeAttachment == Attachments.AR57Receiver) {

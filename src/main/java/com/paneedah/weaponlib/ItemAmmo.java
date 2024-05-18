@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ItemAmmo extends Item {
 	
-	private List<Weapon> compatibleWeapons = new ArrayList<>();
+	private final List<Weapon> compatibleWeapons = new ArrayList<>();
 
 	public void addCompatibleWeapon(Weapon weapon) {
 		compatibleWeapons.add(weapon);

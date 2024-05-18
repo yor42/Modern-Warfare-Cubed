@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 @AllArgsConstructor
 public final class ExplosionMessage implements IMessage {
 
-    private Vector3D velocity = new Vector3D();
+    private final Vector3D velocity = new Vector3D();
     private float strength;
 
     @Override

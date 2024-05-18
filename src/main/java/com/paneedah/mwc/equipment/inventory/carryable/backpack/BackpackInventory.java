@@ -133,11 +133,11 @@ public class BackpackInventory implements IInventory {
                 inventory[i] = new ItemStack(Items.AIR);
             }
             for (int i = 0; i < size && i < items.tagCount(); ++i) {
-                NBTTagCompound item = (NBTTagCompound) items.getCompoundTagAt(i);
+                NBTTagCompound item = items.getCompoundTagAt(i);
                 int slot = item.getInteger(TAG_SLOT_INDEX);
 
                 if (slot >= 0 && slot < size) {
-                    inventory[slot] = new ItemStack(item);;
+                    inventory[slot] = new ItemStack(item);
                 }
             }
         }
