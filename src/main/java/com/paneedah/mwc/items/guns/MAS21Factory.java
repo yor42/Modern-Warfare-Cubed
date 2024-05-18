@@ -2227,7 +2227,7 @@ public class MAS21Factory implements GunFactory {
                         GL11.glTranslatef(-0.075000f, -0.800000f, 0.075000f);
                     }, 
             		(renderContext) -> {
-                        RenderContext<?> rc = renderContext;
+                        RenderContext<?> rc = (RenderContext<?>) renderContext;
                         ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                                 AttachmentCategory.SCOPE, rc.getWeaponInstance());
                         if(activeAttachment == Attachments.RMR) {

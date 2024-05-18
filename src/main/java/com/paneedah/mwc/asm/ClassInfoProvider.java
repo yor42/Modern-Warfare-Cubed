@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class ClassInfoProvider {
 
-    private static final Map<String, ClassInfo> classInfoMap = new HashMap<>();
+    private static Map<String, ClassInfo> classInfoMap = new HashMap<>();
 
     static {
         
@@ -97,7 +97,7 @@ public class ClassInfoProvider {
         
     }
 
-    private static final ClassInfoProvider instance = new ClassInfoProvider();
+    private static ClassInfoProvider instance = new ClassInfoProvider();
 
     public static ClassInfoProvider getInstance() {
         return instance;

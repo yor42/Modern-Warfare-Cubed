@@ -52,7 +52,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-import static com.paneedah.mwc.equipment.inventory.EquipmentInventory.*;
+import static com.paneedah.mwc.equipment.inventory.EquipmentInventory.BACKPACK_SLOT;
+import static com.paneedah.mwc.equipment.inventory.EquipmentInventory.BELT_SLOT;
+import static com.paneedah.mwc.equipment.inventory.EquipmentInventory.VEST_SLOT;
 import static com.paneedah.mwc.proxies.ClientProxy.MC;
 
 
@@ -437,14 +439,14 @@ public class Interceptors {
         	
         	
         	float sMult = 1.0f;
-        	float speed = sMult;
+        	float speed = sMult/1.0f;
         	
         	float f =entityplayer.distanceWalkedModified - entityplayer.prevDistanceWalkedModified;
             float f1 = -(entityplayer.distanceWalkedModified + f * partialTicks);
             float f2 = entityplayer.prevCameraYaw + (entityplayer.cameraYaw - entityplayer.prevCameraYaw) * partialTicks;
             float f3 = entityplayer.prevCameraPitch + (entityplayer.cameraPitch - entityplayer.prevCameraPitch) * partialTicks;
             
-            float xWiggle = LissajousCurve.getXOffsetOnCurve(3, 1, 2, Math.PI, f1);
+            float xWiggle = (float) LissajousCurve.getXOffsetOnCurve(3, 1, 2, Math.PI, f1);
             
             GL11.glTranslatef(MathHelper.sin(f1 * (float)Math.PI*speed) * f2 * 0.5F, -Math.abs(MathHelper.cos(f1 * (float)Math.PI) * f2)*0.5f, 0.0F);
             GL11.glRotatef(MathHelper.sin(f1 * (float)Math.PI*speed) * f2 * 3.0F*sMult, 0.0F, 0.0F, 1.0F);
@@ -634,7 +636,7 @@ public class Interceptors {
 
         if(spreadableExposure != null) {
             GL11.glRotatef(-f * 4.0F, 1.0F, 0.0F, 0.0F);
-            GL11.glRotatef(-f, 0.0F, 0.0F, 1.0F);
+            GL11.glRotatef(-f * 1.0F, 0.0F, 0.0F, 1.0F);
         } else {
             GL11.glRotatef(-f * 14.0F, 0.0F, 0.0F, 1.0F);
         }
@@ -664,7 +666,7 @@ public class Interceptors {
     }
     
 
-    private static final Map<Entity, PlayerRenderer> renderers = new HashMap<>();
+    private static Map<Entity, PlayerRenderer> renderers = new HashMap<>();
     
     public static PlayerRenderer getPlayerRenderer(Entity entity) {
     	

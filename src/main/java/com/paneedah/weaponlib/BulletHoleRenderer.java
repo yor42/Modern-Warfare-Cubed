@@ -22,11 +22,11 @@ public class BulletHoleRenderer {
     private final ArrayList<BulletHole> bulletHoles = new ArrayList<>();
 
     public static class BulletHole {
-        private final Vector3D pos;
+        private Vector3D pos;
         private boolean shouldDie;
-        private final EnumFacing direction;
-        private final double size;
-        private final long timeExisted;
+        private EnumFacing direction;
+        private double size;
+        private long timeExisted;
 
         public BulletHole(Vector3D pos, EnumFacing direction, double size) {
             this.pos = pos;

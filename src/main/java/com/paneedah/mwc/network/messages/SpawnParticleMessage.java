@@ -14,13 +14,13 @@ public final class SpawnParticleMessage implements IMessage {
 
     public enum ParticleType {
         SMOKE_GRENADE_SMOKE,
-        SMOKE_GRENADE_YELLOW_SMOKE
+        SMOKE_GRENADE_YELLOW_SMOKE;
     }
 
     private ParticleType type;
     private int count;
-    private final Vector3F position = new Vector3F();
-    private final Vector3F velocity = new Vector3F();
+    private Vector3F position = new Vector3F();
+    private Vector3F velocity = new Vector3F();
 
     @Override
     public void fromBytes(final ByteBuf byteBuf) {

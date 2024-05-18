@@ -78,7 +78,7 @@ public class CommonModContext implements ModContext {
     }
 
     static class BulletImpactSoundKey {
-        private final Material material;
+        private Material material;
 
         public BulletImpactSoundKey(Material material) {
             this.material = material;
@@ -125,7 +125,7 @@ public class CommonModContext implements ModContext {
 
 	protected PlayerItemInstanceRegistry playerItemInstanceRegistry;
 
-	private final Map<ResourceLocation, SoundEvent> registeredSounds = new HashMap<>();
+	private Map<ResourceLocation, SoundEvent> registeredSounds = new HashMap<>();
 
 	private RecipeManager recipeManager;
 
@@ -143,13 +143,13 @@ public class CommonModContext implements ModContext {
     
     private SoundEvent nightVisionOffSound;
     
-    private final Map<BulletImpactSoundKey, MaterialImpactSound> bulletImpactSoundEntries = new HashMap<>();
+    private Map<BulletImpactSoundKey, MaterialImpactSound> bulletImpactSoundEntries = new HashMap<>();
 
 	private int modEntityID = 256;
 
     private GrenadeAttackAspect grenadeAttackAspect;
     
-    private final Map<Integer, String> registeredTextureNames = new HashMap<>();
+    private Map<Integer, String> registeredTextureNames = new HashMap<>();
     
     private int registeredTextureCounter;
     

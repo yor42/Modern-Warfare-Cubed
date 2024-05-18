@@ -139,7 +139,7 @@ public class ItemScope extends ItemAttachment<Weapon> {
 
     
     private ModContext modContext;
-    private final Builder builder;
+    private Builder builder;
 
     private ItemScope(Builder builder) {
         super(AttachmentCategory.SCOPE, builder.getModel(), builder.getTextureName(), null,

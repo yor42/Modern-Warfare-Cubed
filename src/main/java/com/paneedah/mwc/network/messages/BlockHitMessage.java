@@ -15,7 +15,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 public final class BlockHitMessage implements IMessage {
 
 	private BlockPos blockPos;
-    private final Vector3F position = new Vector3F();
+    private Vector3F position = new Vector3F();
     private EnumFacing enumFacing;
 
     @Override

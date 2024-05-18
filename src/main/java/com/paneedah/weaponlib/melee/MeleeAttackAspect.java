@@ -21,7 +21,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.function.Predicate;
@@ -42,24 +41,24 @@ public class MeleeAttackAspect implements Aspect<MeleeState, PlayerMeleeInstance
     
     private static final long ALERT_TIMEOUT = 300;
 
-    private static final Predicate<PlayerMeleeInstance> attackTimeoutExpired =
+    private static Predicate<PlayerMeleeInstance> attackTimeoutExpired =
             instance -> System.currentTimeMillis() >  instance.getStateUpdateTimestamp()
                 + STUB_DURATION;
 
-    private static final Predicate<PlayerMeleeInstance> heavyAttackTimeoutExpired =
+    private static Predicate<PlayerMeleeInstance> heavyAttackTimeoutExpired =
             instance -> System.currentTimeMillis() >  instance.getStateUpdateTimestamp()
                 + HEAVY_STUB_DURATION;
 
-    private static final Predicate<PlayerMeleeInstance> attackCooldownTimeoutExpired =
+    private static Predicate<PlayerMeleeInstance> attackCooldownTimeoutExpired =
             instance -> System.currentTimeMillis() >  instance.getLastAttackTimestamp() + instance.getWeapon().getAttackCooldownTimeout();
 
-    private static final Predicate<PlayerMeleeInstance> heavyAttackCooldownTimeoutExpired =
+    private static Predicate<PlayerMeleeInstance> heavyAttackCooldownTimeoutExpired =
             instance -> System.currentTimeMillis() >  instance.getLastAttackTimestamp() + instance.getWeapon().getHeavyAttackCooldownTimeout();
 
-    private static final Predicate<PlayerMeleeInstance> readyToStab =
+    private static Predicate<PlayerMeleeInstance> readyToStab =
             instance -> System.currentTimeMillis() >  instance.getStateUpdateTimestamp() + instance.getWeapon().getPrepareStubTimeout();
 
-    private static final Predicate<PlayerMeleeInstance> readyToHeavyStab =
+    private static Predicate<PlayerMeleeInstance> readyToHeavyStab =
             instance -> System.currentTimeMillis() >  instance.getStateUpdateTimestamp() + instance.getWeapon().getPrepareHeavyStubTimeout();
 
 //    private static Predicate<PlayerMeleeInstance> alertTimeoutExpired =
@@ -68,14 +67,14 @@ public class MeleeAttackAspect implements Aspect<MeleeState, PlayerMeleeInstance
 //    private static Predicate<PlayerMeleeInstance> sprinting = instance -> instance.getPlayer().isSprinting();
 
     private static final Set<MeleeState> allowedAttackFromStates = new HashSet<>(
-            Collections.singletonList(MeleeState.READY));
+            Arrays.asList(MeleeState.READY));
 
     private static final Set<MeleeState> allowedUpdateFromStates = new HashSet<>(
             Arrays.asList(MeleeState.ATTACKING, MeleeState.HEAVY_ATTACKING,
                     MeleeState.ATTACKING_STABBING, MeleeState.HEAVY_ATTACKING_STABBING, MeleeState.ALERT));
 
 
-    private final ModContext modContext;
+    private ModContext modContext;
 
     private StateManager<MeleeState, ? super PlayerMeleeInstance> stateManager;
 

@@ -16,7 +16,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fml.common.network.ByteBufUtils;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 import java.util.function.Predicate;
 
 import static com.paneedah.mwc.utils.ModReference.LOG;
@@ -100,19 +103,19 @@ public final class WeaponAttachmentAspect implements Aspect<WeaponState, PlayerW
 		}
 	}
 
-	private final ModContext modContext;
+	private ModContext modContext;
 	private NetworkPermitManager permitManager;
 	private StateManager<WeaponState, ? super PlayerWeaponInstance> stateManager;
 
-	private final long clickSpammingTimeout = 150;
+	private long clickSpammingTimeout = 150;
 
-	private final Predicate<PlayerWeaponInstance> clickSpammingPreventer = es -> System
+	private Predicate<PlayerWeaponInstance> clickSpammingPreventer = es -> System
 			.currentTimeMillis() >= es.getStateUpdateTimestamp() + clickSpammingTimeout;
 
-	private final Predicate<PlayerWeaponInstance> clickSpammingPreventer2 = es -> System
+	private Predicate<PlayerWeaponInstance> clickSpammingPreventer2 = es -> System
 			.currentTimeMillis() >= es.getStateUpdateTimestamp() + clickSpammingTimeout * 2;
 
-	private final Collection<WeaponState> allowedUpdateFromStates = Collections.singletonList(WeaponState.MODIFYING_REQUESTED);
+	private Collection<WeaponState> allowedUpdateFromStates = Arrays.asList(WeaponState.MODIFYING_REQUESTED);
 	private static final int INVENTORY_SIZE = 36;
 
 	WeaponAttachmentAspect(ModContext modContext) {
@@ -176,7 +179,7 @@ public final class WeaponAttachmentAspect implements Aspect<WeaponState, PlayerW
 
 	private void enterAttachmentSelectionMode(EnterAttachmentModePermit permit, PlayerWeaponInstance weaponInstance) {
 		LOG.debug("Entering attachment mode");
-		byte[] selectedAttachmentIndexes = new byte[AttachmentCategory.values.length];
+		byte selectedAttachmentIndexes[] = new byte[AttachmentCategory.values.length];
 		Arrays.fill(selectedAttachmentIndexes, (byte) -1);
 		weaponInstance.setSelectedAttachmentIndexes(selectedAttachmentIndexes);
 
@@ -243,8 +246,8 @@ public final class WeaponAttachmentAspect implements Aspect<WeaponState, PlayerW
 
 	public static class FlaggedAttachment {
 
-		private final ItemAttachment<Weapon> attachment;
-		private final ItemStack stack;
+		private ItemAttachment<Weapon> attachment;
+		private ItemStack stack;
 		private ArrayList<ItemAttachment<Weapon>> requiredParts;
 
 		public FlaggedAttachment(ItemStack stack, ItemAttachment<Weapon> attachment) {
@@ -304,8 +307,7 @@ public final class WeaponAttachmentAspect implements Aspect<WeaponState, PlayerW
 
 				// We do want to display if it is a potential attachment
 				// but there are conditions to be met
-                modContext.getAttachmentAspect();
-                if (!WeaponAttachmentAspect.hasRequiredAttachments(potentialAttachment, weaponInstance)) {
+				if (!modContext.getAttachmentAspect().hasRequiredAttachments(potentialAttachment, weaponInstance)) {
 					flaggedAttachment.setRequiredParts(getRequiredParts(potentialAttachment, weaponInstance));
 				}
 
@@ -434,7 +436,7 @@ public final class WeaponAttachmentAspect implements Aspect<WeaponState, PlayerW
 			
 			activeAttachmentIds[attachmentCategory.ordinal()] = Item.getIdFromItem(nextAttachment);
 		} else if(lookupResult.isCreative) {
-			ItemAttachment<Weapon> nextAttachment = lookupResult.compatibleAttachment.getAttachment();
+			ItemAttachment<Weapon> nextAttachment = (ItemAttachment<Weapon>) lookupResult.compatibleAttachment.getAttachment();
 
 			if (nextAttachment.getApply() != null) {
 				nextAttachment.getApply().apply(nextAttachment, weaponInstance.getWeapon(), player);

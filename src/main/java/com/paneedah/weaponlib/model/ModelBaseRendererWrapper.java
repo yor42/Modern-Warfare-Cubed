@@ -6,7 +6,7 @@ import org.lwjgl.opengl.GL11;
 
 public class ModelBaseRendererWrapper extends ModelRenderer {
     
-    private final WrappableModel model;
+    private WrappableModel model;
 
     public ModelBaseRendererWrapper(WrappableModel model) {
         super(new ModelBase() {});

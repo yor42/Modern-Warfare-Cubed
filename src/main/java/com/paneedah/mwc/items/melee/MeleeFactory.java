@@ -5,5 +5,5 @@ import net.minecraft.item.Item;
 
 public interface MeleeFactory {
 	
-	Item createMelee(CommonProxy commonProxy);
+	public Item createMelee(CommonProxy commonProxy);
 }

@@ -5,16 +5,15 @@ import com.paneedah.weaponlib.animation.MultipartTransitionProvider;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class PlayerTransitionProvider implements MultipartTransitionProvider<RenderableState, Part, RenderContext<RenderableState>>  {
 
     public static class Builder {
 
-        private final List<MultipartTransition<Part, RenderContext<RenderableState>>> proningTransitions = new ArrayList<>();
+        private List<MultipartTransition<Part, RenderContext<RenderableState>>> proningTransitions = new ArrayList<>();
         
-        private final List<MultipartTransition<Part, RenderContext<RenderableState>>> proningAimingTransitions = new ArrayList<>();
+        private List<MultipartTransition<Part, RenderContext<RenderableState>>> proningAimingTransitions = new ArrayList<>();
 
         public Builder withProningTransition(MultipartTransition<Part, RenderContext<RenderableState>> transition) {
             proningTransitions.add(transition);
@@ -31,20 +30,15 @@ public class PlayerTransitionProvider implements MultipartTransitionProvider<Ren
         }
     }
     
-    private final List<MultipartTransition<Part, RenderContext<RenderableState>>> normalTransitions =
-            Collections.singletonList(
+    private List<MultipartTransition<Part, RenderContext<RenderableState>>> normalTransitions = 
+            Arrays.asList(
                     new MultipartTransition<Part, RenderContext<RenderableState>>(
-                            Part.MAIN, renderContext -> {
-                    }, 200, 0)
-                            .withPartPositionFunction(Part.LEFT_HAND, rc -> {
-                            })
-                            .withPartPositionFunction(Part.RIGHT_HAND, rc -> {
-                            })
-                            .withPartPositionFunction(Part.LEFT_LEG, rc -> {
-                            })
-                            .withPartPositionFunction(Part.RIGHT_LEG, rc -> {
-                            })
-            );
+                            Part.MAIN, renderContext -> {}, 200, 0)
+                    .withPartPositionFunction(Part.LEFT_HAND, rc -> {})
+                    .withPartPositionFunction(Part.RIGHT_HAND, rc -> {})
+                    .withPartPositionFunction(Part.LEFT_LEG, rc -> {})
+                    .withPartPositionFunction(Part.RIGHT_LEG, rc -> {})
+                    );
 
     private Builder builder;
 

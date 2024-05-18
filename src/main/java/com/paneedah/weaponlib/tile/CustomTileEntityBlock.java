@@ -27,7 +27,7 @@ public class CustomTileEntityBlock extends BlockContainer {
 	
     public static final PropertyDirection FACING = BlockHorizontal.FACING;
 
-    private final Class<? extends TileEntity> tileEntityClass;
+    private Class<? extends TileEntity> tileEntityClass;
     private Function<IBlockState, AxisAlignedBB> customBoundingBox;
     
     protected CustomTileEntityBlock(Material material, Class<? extends TileEntity> tileEntityClass) {
@@ -37,7 +37,7 @@ public class CustomTileEntityBlock extends BlockContainer {
     }
     
     protected BlockStateContainer createBlockState() {
-        return new BlockStateContainer(this, FACING);
+        return new BlockStateContainer(this, new IProperty[] {FACING});
     }
     
     public void setBoundingBox(Function<IBlockState, AxisAlignedBB> customBoundingBox) {
@@ -110,7 +110,7 @@ public class CustomTileEntityBlock extends BlockContainer {
      */
     public int getMetaFromState(IBlockState state) {
         int i = 0;
-        i = i | state.getValue(FACING).getHorizontalIndex();
+        i = i | ((EnumFacing)state.getValue(FACING)).getHorizontalIndex();
         return i;
     }
     
@@ -130,7 +130,7 @@ public class CustomTileEntityBlock extends BlockContainer {
                 
                 if (placer instanceof EntityPlayer)
                 {
-                    placer.sendMessage(new TextComponentTranslation("Invalid damage property. Please pick in [0, 1, 2]"));
+                    placer.sendMessage(new TextComponentTranslation("Invalid damage property. Please pick in [0, 1, 2]", new Object[0]));
                 }
             }
 

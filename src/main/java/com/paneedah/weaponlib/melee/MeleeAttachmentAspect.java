@@ -15,7 +15,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 import java.util.function.Predicate;
 
 import static com.paneedah.mwc.utils.ModReference.LOG;
@@ -75,16 +78,16 @@ public final class MeleeAttachmentAspect implements Aspect<MeleeState, PlayerMel
 		}
 	}
 	
-	private final ModContext modContext;
+	private ModContext modContext;
 	private NetworkPermitManager permitManager;
 	private StateManager<MeleeState, ? super PlayerMeleeInstance> stateManager;
 	
-	private final long clickSpammingTimeout = 100;
+	private long clickSpammingTimeout = 100;
 	
-	private final Predicate<PlayerMeleeInstance> clickSpammingPreventer = es ->
+	private Predicate<PlayerMeleeInstance> clickSpammingPreventer = es ->
 		System.currentTimeMillis() >= es.getStateUpdateTimestamp() + clickSpammingTimeout;
 		
-	private final Collection<MeleeState> allowedUpdateFromStates = Collections.singletonList(MeleeState.MODIFYING_REQUESTED);
+	private Collection<MeleeState> allowedUpdateFromStates = Arrays.asList(MeleeState.MODIFYING_REQUESTED);
 
 	public MeleeAttachmentAspect(ModContext modContext) {
 		this.modContext = modContext;
@@ -158,7 +161,7 @@ public final class MeleeAttachmentAspect implements Aspect<MeleeState, PlayerMel
 	
 	private void enterAttachmentSelectionMode(EnterAttachmentModePermit permit, PlayerMeleeInstance weaponInstance) {
 		LOG.debug("Entering attachment mode");
-		byte[] selectedAttachmentIndexes = new byte[AttachmentCategory.values.length];
+		byte selectedAttachmentIndexes[] = new byte[AttachmentCategory.values.length];
 		Arrays.fill(selectedAttachmentIndexes, (byte)-1);
 		weaponInstance.setSelectedAttachmentIndexes(selectedAttachmentIndexes);
 		
@@ -390,8 +393,8 @@ public final class MeleeAttachmentAspect implements Aspect<MeleeState, PlayerMel
 			if(attachment != null && attachment.getApply() != null) {
 				attachment.getApply().apply(attachment, weaponInstance.getWeapon(), weaponInstance.getPlayer());
 			}
-			activeAttachmentsIds[attachment.getCategory().ordinal()] = Item.getIdFromItem(attachment);
-        } else {
+			activeAttachmentsIds[attachment.getCategory().ordinal()] = Item.getIdFromItem(attachment);;
+		} else {
 			System.err.println("Attachment of category " + attachment.getCategory() + " installed, remove it first");
 		}
 	}

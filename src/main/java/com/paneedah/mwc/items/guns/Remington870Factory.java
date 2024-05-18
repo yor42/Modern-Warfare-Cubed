@@ -1340,7 +1340,7 @@ public class Remington870Factory implements GunFactory {
              }) 
             .withFirstPersonHandPositioning(
                      (renderContext) -> {
-                         RenderContext<?> rc = renderContext;
+                         RenderContext<?> rc = (RenderContext<?>) renderContext;
                          ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                                  AttachmentCategory.GRIP, rc.getWeaponInstance());
                          if(activeAttachment == Attachments.Grip2 || 
@@ -1366,7 +1366,7 @@ public class Remington870Factory implements GunFactory {
                          }
                      }, 
                      (renderContext) -> {
-                         RenderContext<?> rc = renderContext;
+                         RenderContext<?> rc = (RenderContext<?>) renderContext;
                          ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                                  AttachmentCategory.STOCK, rc.getWeaponInstance());
                          if(activeAttachment == Attachments.Remington870SawedGrip) {
@@ -1394,7 +1394,7 @@ public class Remington870Factory implements GunFactory {
                      
             .withFirstPersonHandPositioningProning(
                     (renderContext) -> {
-                        RenderContext<?> rc = renderContext;
+                        RenderContext<?> rc = (RenderContext<?>) renderContext;
                         ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                                 AttachmentCategory.GRIP, rc.getWeaponInstance());
                         if(activeAttachment == Attachments.Grip2 || 
@@ -1414,7 +1414,7 @@ public class Remington870Factory implements GunFactory {
                         }
                     }, 
                     (renderContext) -> {
-                        RenderContext<?> rc = renderContext;
+                        RenderContext<?> rc = (RenderContext<?>) renderContext;
                         ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                                 AttachmentCategory.STOCK, rc.getWeaponInstance());
                         if(activeAttachment == Attachments.Remington870SawedGrip) {
@@ -1449,7 +1449,7 @@ public class Remington870Factory implements GunFactory {
                         GL11.glTranslatef(-0.200000f, -1.549999f, 0.075000f);
                     }, 
                     (renderContext) -> {
-                        RenderContext<?> rc = renderContext;
+                        RenderContext<?> rc = (RenderContext<?>) renderContext;
                         ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                                 AttachmentCategory.STOCK, rc.getWeaponInstance());
                         if(activeAttachment == Attachments.Remington870SawedGrip) {
@@ -1477,7 +1477,7 @@ public class Remington870Factory implements GunFactory {
                      
             .withFirstPersonHandPositioningZooming(
                     (renderContext) -> {
-                        RenderContext<?> rc = renderContext;
+                        RenderContext<?> rc = (RenderContext<?>) renderContext;
                         ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                                 AttachmentCategory.GRIP, rc.getWeaponInstance());
                         if(activeAttachment == Attachments.Grip2 || 
@@ -1497,7 +1497,7 @@ public class Remington870Factory implements GunFactory {
                         }
                     }, 
                     (renderContext) -> {
-                        RenderContext<?> rc = renderContext;
+                        RenderContext<?> rc = (RenderContext<?>) renderContext;
                         ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                                 AttachmentCategory.STOCK, rc.getWeaponInstance());
                         if(activeAttachment == Attachments.Remington870SawedGrip) {
@@ -1532,7 +1532,7 @@ public class Remington870Factory implements GunFactory {
                          GL11.glTranslatef(0.250000f, -0.625000f, 0.125000f);
                      }, 
                      (renderContext) -> {
-                         RenderContext<?> rc = renderContext;
+                         RenderContext<?> rc = (RenderContext<?>) renderContext;
                          ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                                  AttachmentCategory.STOCK, rc.getWeaponInstance());
                          if(activeAttachment == Attachments.Remington870SawedGrip) {

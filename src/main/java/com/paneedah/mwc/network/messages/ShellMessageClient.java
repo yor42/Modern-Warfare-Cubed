@@ -16,8 +16,8 @@ public final class ShellMessageClient implements IMessage {
 
 	private int shooter;
 	private Shell.Type type;
-	private final Vector3D position = new Vector3D();
-	private final Vector3D velocity = new Vector3D();
+	private Vector3D position = new Vector3D();
+	private Vector3D velocity = new Vector3D();
 
 	@Override
 	public void fromBytes(final ByteBuf byteBuf) {

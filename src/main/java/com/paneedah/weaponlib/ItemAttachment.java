@@ -21,15 +21,15 @@ import static com.paneedah.mwc.utils.ModReference.ID;
 
 public class ItemAttachment<T> extends Item implements ModelSource, IModernCraftingRecipe {
 
-	private final AttachmentCategory category;
-	private final String crosshair;
-	private final ApplyHandler<T> apply;
-	private final ApplyHandler<T> remove;
+	private AttachmentCategory category;
+	private String crosshair;
+	private ApplyHandler<T> apply;
+	private ApplyHandler<T> remove;
 	protected ApplyHandler2<T> apply2;
 	protected ApplyHandler2<T> remove2;
 	protected MeleeWeaponApplyHandler<T> apply3;
 	protected MeleeWeaponApplyHandler<T> remove3;
-	private final List<Tuple<ModelBase, String>> texturedModels = new ArrayList<>();
+	private List<Tuple<ModelBase, String>> texturedModels = new ArrayList<>();
 	private List<CustomRenderer<?>> postRenderer = new ArrayList<>();
 	private CustomRenderer<?> preRenderer;
 	private Part renderablePart;
@@ -40,9 +40,9 @@ public class ItemAttachment<T> extends Item implements ModelSource, IModernCraft
 	private CraftingEntry[] modernRecipe;
 	private CraftingGroup craftGroup;
 	
-	private final List<CompatibleAttachment<T>> attachments = new ArrayList<>();
+	private List<CompatibleAttachment<T>> attachments = new ArrayList<>();
 
-	private final List<Weapon> compatibleWeapons = new ArrayList<>();
+	private List<Weapon> compatibleWeapons = new ArrayList<>();
 	
 	private List<ItemAttachment<T>> requiredAttachments = new ArrayList<>();
 
@@ -51,16 +51,16 @@ public class ItemAttachment<T> extends Item implements ModelSource, IModernCraft
 	public Vec3d rotationPoint = Vec3d.ZERO;
 	
 
-	public interface ApplyHandler<T> {
-		void apply(ItemAttachment<T> itemAttachment, T target, EntityLivingBase player);
+	public static interface ApplyHandler<T> {
+		public void apply(ItemAttachment<T> itemAttachment, T target, EntityLivingBase player);
 	}
 
-	public interface ApplyHandler2<T> {
-		void apply(ItemAttachment<T> itemAttachment, PlayerWeaponInstance instance);
+	public static interface ApplyHandler2<T> {
+		public void apply(ItemAttachment<T> itemAttachment, PlayerWeaponInstance instance);
 	}
 
-	public interface MeleeWeaponApplyHandler<T> {
-        void apply(ItemAttachment<T> itemAttachment, PlayerMeleeInstance instance);
+	public static interface MeleeWeaponApplyHandler<T> {
+        public void apply(ItemAttachment<T> itemAttachment, PlayerMeleeInstance instance);
     }
 
 	protected ItemAttachment(AttachmentCategory category, ModelBase model, String textureName, String crosshair,

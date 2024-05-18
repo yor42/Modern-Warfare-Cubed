@@ -459,7 +459,7 @@ public class EntityCustomMob extends EntityMob implements IRangedAttackMob, Cont
 
         NBTTagCompound secondaryNbt = compound.getCompoundTag("Secondary");
         if (secondaryNbt != null) {
-            this.secondaryEquipment = new ItemStack(secondaryNbt);
+            this.secondaryEquipment = new ItemStack(secondaryNbt);;
         }
     }
 

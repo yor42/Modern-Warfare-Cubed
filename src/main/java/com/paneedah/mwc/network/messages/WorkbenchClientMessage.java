@@ -21,7 +21,7 @@ public final class WorkbenchClientMessage implements IMessage {
      * <p>
      * Use {@link Minecraft#world} instead.
      */
-    private final World world;
+    private World world;
 
     private BlockPos position;
 

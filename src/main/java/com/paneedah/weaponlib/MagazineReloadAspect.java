@@ -50,24 +50,24 @@ public class MagazineReloadAspect implements Aspect<MagazineState, PlayerMagazin
     	
     }
 
-    private static final long reloadAnimationDuration = 1000;
+    private static long reloadAnimationDuration = 1000;
 
 
-    private static final Predicate<PlayerMagazineInstance> reloadAnimationCompleted = es ->
+    private static Predicate<PlayerMagazineInstance> reloadAnimationCompleted = es ->
         System.currentTimeMillis() >= es.getStateUpdateTimestamp() + reloadAnimationDuration; // TODO: read reload animation duration from the state itself
 
-    private final ModContext modContext;
+    private ModContext modContext;
 
     private NetworkPermitManager permitManager;
 
     private StateManager<MagazineState, ? super PlayerMagazineInstance> stateManager;
 
-    private final Predicate<PlayerMagazineInstance> notFull = instance -> {
+    private Predicate<PlayerMagazineInstance> notFull = instance -> {
         boolean result = Tags.getAmmo(instance.getItemStack()) < instance.getMagazine().getCapacity();
         return result;
     };
     
-    private final Predicate<PlayerMagazineInstance> notEmpty = instance -> {
+    private Predicate<PlayerMagazineInstance> notEmpty = instance -> {
         boolean result = Tags.getAmmo(instance.getItemStack()) != 0;
         return result;
     };
@@ -276,6 +276,7 @@ public class MagazineReloadAspect implements Aspect<MagazineState, PlayerMagazin
     private void doPermittedUnload(PlayerMagazineInstance weaponInstance, UnloadPermit permit) {
         if(permit == null) {
             System.err.println("Permit is null, something went wrong");
+            return;
         }
 //      if(permit.getStatus() == Status.GRANTED) {
 //          weaponInstance.getPlayer().playSound(weaponInstance.getWeapon().getReloadSound(), 1, 1);
@@ -285,6 +286,7 @@ public class MagazineReloadAspect implements Aspect<MagazineState, PlayerMagazin
     private void doPermittedLoad(PlayerMagazineInstance weaponInstance, LoadPermit permit) {
         if(permit == null) {
             System.err.println("Permit is null, something went wrong");
+            return;
         }
 //      if(permit.getStatus() == Status.GRANTED) {
 //          weaponInstance.getPlayer().playSound(weaponInstance.getWeapon().getReloadSound(), 1, 1);

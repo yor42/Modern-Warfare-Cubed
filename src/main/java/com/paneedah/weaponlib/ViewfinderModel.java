@@ -23,8 +23,8 @@ public class ViewfinderModel extends ModelBase {
 	
 	private static final ResourceLocation SCOPE_GRIME_TEXTURE = new ResourceLocation(ID + ":textures/hud/scopedirt.png");
 
-	private final ModelRenderer surfaceRenderer;
-	private final FlatSurfaceModelBox box;
+	private ModelRenderer surfaceRenderer;
+	private FlatSurfaceModelBox box;
 
 	public ViewfinderModel() {
 		textureWidth = 128;

@@ -23,7 +23,7 @@ import static com.paneedah.mwc.proxies.ClientProxy.MC;
 
 public class WeaponEventHandler {
 
-	private final ModContext modContext;
+	private ModContext modContext;
 
 	public WeaponEventHandler(ModContext modContext) {
 		this.modContext = modContext;

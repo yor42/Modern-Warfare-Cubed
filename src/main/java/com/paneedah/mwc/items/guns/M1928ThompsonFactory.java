@@ -717,7 +717,7 @@ public class M1928ThompsonFactory {
              
              .withFirstPersonHandPositioning(
                      (renderContext) -> {
-                         RenderContext<?> rc = renderContext;
+                         RenderContext<?> rc = (RenderContext<?>) renderContext;
                          ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                                  AttachmentCategory.GRIP, rc.getWeaponInstance());
                          if(activeAttachment == Attachments.M1928Grip) {
@@ -744,7 +744,7 @@ public class M1928ThompsonFactory {
                      
             .withFirstPersonHandPositioningProning(
                     (renderContext) -> {
-                        RenderContext<?> rc = renderContext;
+                        RenderContext<?> rc = (RenderContext<?>) renderContext;
                         ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                                 AttachmentCategory.GRIP, rc.getWeaponInstance());
                         if(activeAttachment == Attachments.M1928Grip) {

@@ -36,8 +36,8 @@ public class PlayerRenderer {
     
     private static class EquippedPlayerTransitionProvider extends PlayerTransitionProvider {
 
-        private final PlayerTransitionProvider delegate;
-        private final EntityPlayer player;
+        private PlayerTransitionProvider delegate;
+        private EntityPlayer player;
 
         EquippedPlayerTransitionProvider(EntityPlayer player, PlayerTransitionProvider delegate) {
             this.player = player;
@@ -53,7 +53,7 @@ public class PlayerRenderer {
         }
     }
      
-    private final PlayerTransitionProvider transitionProvider;// = new PlayerTransitionProvider();
+    private PlayerTransitionProvider transitionProvider;// = new PlayerTransitionProvider();
     
     private class PositionerDescriptor {
         Positioner<Part, RenderContext<RenderableState>> positioner;
@@ -66,7 +66,7 @@ public class PlayerRenderer {
         }
     }
     
-    private final ThreadLocal<PositionerDescriptor> currentPositioner = new ThreadLocal<>();
+    private ThreadLocal<PositionerDescriptor> currentPositioner = new ThreadLocal<>();
 
 //    private ThreadLocal<Positioner<Part, RenderContext<RenderableState>>> currentPositioner = new ThreadLocal<>();
     
@@ -74,7 +74,7 @@ public class PlayerRenderer {
     private int newFlags;
     private long renderingStartTimestamp;
     private long playerStopMovingTimestamp;
-    private final ClientModContext clientModContext;
+    private ClientModContext clientModContext;
     
     private MultipartRenderStateManager<RenderableState, Part, RenderContext<RenderableState>> generalPlayerStateManager;
     

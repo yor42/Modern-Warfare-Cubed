@@ -1,6 +1,7 @@
 package com.paneedah.mwc.models;
 
 import com.paneedah.weaponlib.ai.EntityCustomMob;
+
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;

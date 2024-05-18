@@ -23,12 +23,12 @@ public class BackpackContainer extends Container {
      */
     public final BackpackInventory inventory;
 
-    private final int armorSlotStartIndex;
-    private final int armorSlotEndIndex;
-    private final int standardInventorySlotStartIndex;
-    private final int standardInventorySlotEndIndex;
-    private final int hotbarSlotStartIndex;
-    private final int hotbarSlotEndIndex;
+    private int armorSlotStartIndex;
+    private int armorSlotEndIndex;
+    private int standardInventorySlotStartIndex;
+    private int standardInventorySlotEndIndex;
+    private int hotbarSlotStartIndex;
+    private int hotbarSlotEndIndex;
 
     public BackpackContainer(EntityPlayer player, InventoryPlayer inventoryPlayer, BackpackInventory inventoryItem) {
         this.inventory = inventoryItem;
@@ -62,7 +62,7 @@ public class BackpackContainer extends Container {
         
         List<Slot> slots = new ArrayList<>();
         for (int i = 0; i < inventoryCustom.getSizeInventory(); ++i) {
-            slots.add(new BackpackSlot(this.inventory, i, 80 + (18 * (i / 4)), 8 + (18 * (i % 4))));
+            slots.add(new BackpackSlot(this.inventory, i, 80 + (18 * (int) (i / 4)), 8 + (18 * (i % 4))));
         }
         
         return slots;
@@ -116,7 +116,7 @@ public class BackpackContainer extends Container {
                 public boolean canTakeStack(EntityPlayer playerIn)
                 {
                     ItemStack itemstack = this.getStack();
-                    return (itemstack.isEmpty() || playerIn.isCreative() || !EnchantmentHelper.hasBindingCurse(itemstack)) && super.canTakeStack(playerIn);
+                    return !itemstack.isEmpty() && !playerIn.isCreative() && EnchantmentHelper.hasBindingCurse(itemstack) ? false : super.canTakeStack(playerIn);
                 }
                 @Nullable
                 @SideOnly(Side.CLIENT)

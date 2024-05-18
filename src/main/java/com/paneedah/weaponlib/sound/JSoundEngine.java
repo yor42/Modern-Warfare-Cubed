@@ -388,8 +388,9 @@ public class JSoundEngine {
 			// case '2': ALC10.alcProcessContext(); break;
 
 			}
+			;
 
-        }
+		}
 
 		killALData();
 	}

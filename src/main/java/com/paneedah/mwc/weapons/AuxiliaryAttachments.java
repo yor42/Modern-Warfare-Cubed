@@ -67,7 +67,7 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> P10frontsight;
     public static ItemAttachment<Weapon> SpringfieldRearSight;
     public static ItemAttachment<Weapon> SpringfieldAction;
-    public static ItemAttachment<Weapon> Kar98Kaction;
+    public static ItemAttachment<Weapon> Kar98Kaction;;
     public static ItemAttachment<Weapon> MG42latch;
     public static ItemAttachment<Weapon> MG34latch;
     public static ItemAttachment<Weapon> MG42Belt;

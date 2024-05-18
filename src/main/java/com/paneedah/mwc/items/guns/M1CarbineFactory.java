@@ -278,7 +278,7 @@ public class M1CarbineFactory {
                 })
             
              .withFirstPersonPositioning((renderContext) -> {
-                 RenderContext<?> rc = renderContext;
+                 RenderContext<?> rc = (RenderContext<?>) renderContext;
                  ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                          AttachmentCategory.STOCK, rc.getWeaponInstance());
                  if(activeAttachment == Attachments.M1A1CarbineBody) {
@@ -295,7 +295,7 @@ public class M1CarbineFactory {
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
-                RenderContext<?> rc = renderContext;
+                RenderContext<?> rc = (RenderContext<?>) renderContext;
                 ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                         AttachmentCategory.STOCK, rc.getWeaponInstance());
                 if(activeAttachment == Attachments.M1A1CarbineBody) {
@@ -821,7 +821,7 @@ public class M1CarbineFactory {
                              GL11.glTranslatef(0.400000f, -0.125000f, 0.250000f);
                      }, 
                      (renderContext) -> {
-                         RenderContext<?> rc = renderContext;
+                         RenderContext<?> rc = (RenderContext<?>) renderContext;
                          ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                                  AttachmentCategory.STOCK, rc.getWeaponInstance());
                          if(activeAttachment == Attachments.M1A1CarbineBody) {
@@ -848,7 +848,7 @@ public class M1CarbineFactory {
                         GL11.glTranslatef(0.400000f, -0.125000f, 0.250000f);
                 }, 
                 (renderContext) -> {
-                    RenderContext<?> rc = renderContext;
+                    RenderContext<?> rc = (RenderContext<?>) renderContext;
                     ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                             AttachmentCategory.STOCK, rc.getWeaponInstance());
                     if(activeAttachment == Attachments.M1A1CarbineBody) {
@@ -875,7 +875,7 @@ public class M1CarbineFactory {
                         GL11.glTranslatef(0.400000f, -0.125000f, 0.250000f);
                 }, 
                 (renderContext) -> {
-                    RenderContext<?> rc = renderContext;
+                    RenderContext<?> rc = (RenderContext<?>) renderContext;
                     ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                             AttachmentCategory.STOCK, rc.getWeaponInstance());
                     if(activeAttachment == Attachments.M1A1CarbineBody) {
@@ -902,7 +902,7 @@ public class M1CarbineFactory {
                         GL11.glTranslatef(0.400000f, -0.125000f, 0.250000f);
                 }, 
                 (renderContext) -> {
-                    RenderContext<?> rc = renderContext;
+                    RenderContext<?> rc = (RenderContext<?>) renderContext;
                     ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                             AttachmentCategory.STOCK, rc.getWeaponInstance());
                     if(activeAttachment == Attachments.M1A1CarbineBody) {
@@ -929,7 +929,7 @@ public class M1CarbineFactory {
                         GL11.glTranslatef(0.400000f, -0.125000f, 0.250000f);
                 }, 
                 (renderContext) -> {
-                    RenderContext<?> rc = renderContext;
+                    RenderContext<?> rc = (RenderContext<?>) renderContext;
                     ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
                             AttachmentCategory.STOCK, rc.getWeaponInstance());
                     if(activeAttachment == Attachments.M1A1CarbineBody) {

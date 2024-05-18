@@ -32,11 +32,11 @@ public class BetterAINearestAttackableTarget<T extends EntityLivingBase> extends
 	
 	@Override
 	public boolean shouldExecute() {
-		if (targetChance > 0 && this.taskOwner.getRNG().nextInt(targetChance) != 0)
+		if (this.targetChance > 0 && this.taskOwner.getRNG().nextInt(this.targetChance) != 0)
             return false;
 
         else if (this.targetClass != EntityPlayer.class && this.targetClass != EntityPlayerMP.class) {
-            List<T> list = this.taskOwner.world.getEntitiesWithinAABB(this.targetClass, this.getTargetableArea(this.getTargetDistance()), this.targetEntitySelector);
+            List<T> list = this.taskOwner.world.<T>getEntitiesWithinAABB(this.targetClass, this.getTargetableArea(this.getTargetDistance()), this.targetEntitySelector);
             list.removeIf(s -> {
             	if(s instanceof EntityCustomMob) {
             		return ((EntityCustomMob) s).getMobName() != this.enemyName;

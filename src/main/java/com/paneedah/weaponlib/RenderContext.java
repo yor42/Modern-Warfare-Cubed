@@ -29,7 +29,7 @@ public class RenderContext<RS> implements PartPositionProvider {
 	private PlayerItemInstance<?> playerItemInstance;
 	private boolean cancelBeizer;
 
-	private final Map<Part, Matrix4f> attachablePartPositions;
+	private Map<Part, Matrix4f> attachablePartPositions;
 
 	public RenderContext(EntityLivingBase player, ItemStack itemStack) {
 		this.player = player;
