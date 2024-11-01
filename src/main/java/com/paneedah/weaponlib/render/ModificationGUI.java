@@ -5,7 +5,6 @@ import com.paneedah.weaponlib.WeaponAttachmentAspect.FlaggedAttachment;
 import com.paneedah.weaponlib.command.DebugCommand;
 import com.paneedah.weaponlib.config.BalancePackManager;
 import com.paneedah.weaponlib.jim.util.LangTools;
-import com.paneedah.weaponlib.render.gui.ColorPalette;
 import com.paneedah.weaponlib.render.gui.GUIRenderHelper;
 import com.paneedah.weaponlib.render.gui.GUIRenderHelper.StringAlignment;
 import net.minecraft.client.gui.ScaledResolution;
@@ -21,6 +20,7 @@ import java.util.ArrayList;
 
 import static com.paneedah.mwc.proxies.ClientProxy.MC;
 import static com.paneedah.mwc.ProjectConstants.ID;
+import static com.paneedah.weaponlib.render.gui.ColorPalette.*;
 
 /**
  * Singleton modification GUI renderer & logic class
@@ -55,7 +55,6 @@ public class ModificationGUI {
 
 
     private static final int TOOLTIP_COL_ERROR = 0x702b2b;
-    private static final int TOOLTIP_COL_NORMAL = 0x00000;
 
 
     private static final int[][] DEFAULT_POSITION = new int[][]{{-50, 50}, {120, 75}, {150, 0}, {100, -50},
@@ -569,9 +568,9 @@ public class ModificationGUI {
         // Draws background rectangles
 
 
-        GUIRenderHelper.drawColoredRectangle(20, 20, 115, 175, SIDEBAR_ALPHA, ColorPalette.BLACK);
-        GUIRenderHelper.drawColoredRectangle(140.5, 20, 7.5, 175, SIDEBAR_ALPHA, ColorPalette.BLACK);
-        GUIRenderHelper.drawColoredRectangle(20, 200, 128, 125, SIDEBAR_ALPHA, ColorPalette.BLACK);
+        GUIRenderHelper.drawColoredRectangle(20, 20, 115, 175, SIDEBAR_ALPHA, BLACK);
+        GUIRenderHelper.drawColoredRectangle(140.5, 20, 7.5, 175, SIDEBAR_ALPHA, BLACK);
+        GUIRenderHelper.drawColoredRectangle(20, 200, 128, 125, SIDEBAR_ALPHA, BLACK);
 
 
         float firerate = weaponInstance.getFireRate();
@@ -593,21 +592,21 @@ public class ModificationGUI {
         // Write titles in
         GUIRenderHelper.drawScaledString(
                 TextFormatting.GOLD + "Weapon Stats",
-                30, 205, 1.0, ColorPalette.WHITE);
+                30, 205, 1.0, WHITE);
 
         GUIRenderHelper.drawScaledString(
                 TextFormatting.GOLD + LangTools.formatName(weapon.getTranslationKey()),
-                30, 30, 1.0, ColorPalette.WHITE);
+                30, 30, 1.0, WHITE);
         GUIRenderHelper.drawScaledString(
                 "Damage :: " + TextFormatting.GOLD + String.format("%.2f", (BalancePackManager.getNetGunDamage(weapon))),
-                30, 60, 1, ColorPalette.WHITE);
+                30, 60, 1, WHITE);
         GUIRenderHelper.drawScaledString("Recoil :: " + TextFormatting.GOLD + String.format("%.2f", (weaponInstance.getRecoil())),
-                30, 75, 1, ColorPalette.WHITE);
+                30, 75, 1, WHITE);
         GUIRenderHelper.drawScaledString("Firerate :: " + TextFormatting.GOLD + weaponInstance.getFireRate(), 30, 90, 1,
-                ColorPalette.WHITE);
+                WHITE);
         GUIRenderHelper.drawScaledString(
                 "Inaccuracy :: " + TextFormatting.GOLD + String.format("%.1f", (weaponInstance.getInaccuracy())), 30,
-                105, 1, ColorPalette.WHITE);
+                105, 1, WHITE);
 
         GlStateManager.popMatrix();
 
@@ -652,7 +651,7 @@ public class ModificationGUI {
                 setAlpha(1.0f);
 
 
-                GUIRenderHelper.drawAlignedString(text, StringAlignment.RIGHT, true, scaledresolution.getScaledWidth_double() - 18, scaledresolution.getScaledHeight_double() - 75 - (18 * groupID), SIDEBAR_SCALE, ColorPalette.WHITE);
+                GUIRenderHelper.drawAlignedString(text, StringAlignment.RIGHT, true, scaledresolution.getScaledWidth_double() - 18, scaledresolution.getScaledHeight_double() - 75 - (18 * groupID), SIDEBAR_SCALE, WHITE);
 
                 //System.out.println("hi ");
 
@@ -829,7 +828,7 @@ public class ModificationGUI {
                 PRIMARY_SELECTOR_ELEMENT.render();
             }
 
-            tooltip.color = TOOLTIP_COL_NORMAL;
+            tooltip.color = BLACK;
             requiresTooltip = true;
             tooltip.addLine(
                     new TextComponentTranslation(primaryAttachment.getTranslationKey() + ".name").getFormattedText());
@@ -935,7 +934,7 @@ public class ModificationGUI {
             RIGHT_ARROW_ELEMENT.render();
             setAlpha(1.0f);
 
-            GUIRenderHelper.drawScaledString("Pg. " + (tab.page + 1), 188.5, 256.5, 2.5, ColorPalette.WHITE);
+            GUIRenderHelper.drawScaledString("Pg. " + (tab.page + 1), 188.5, 256.5, 2.5, WHITE);
 
         }
 
@@ -946,7 +945,7 @@ public class ModificationGUI {
         if (dropdownHovered) {
             GUIRenderHelper.drawScaledString(title, 125, 10, 2.5, 0xfeca57);
         } else {
-            GUIRenderHelper.drawScaledString(title, 125, 10, 2.5, ColorPalette.WHITE);
+            GUIRenderHelper.drawScaledString(title, 125, 10, 2.5, WHITE);
         }
 
         // Primary item renderer
@@ -1014,7 +1013,7 @@ public class ModificationGUI {
                         selector.render();
                         GlStateManager.translate(0, 0, -50);
 
-                        tooltip.color = TOOLTIP_COL_NORMAL;
+                        tooltip.color = BLACK;
                         requiresTooltip = true;
                         tooltip.addLine(
                                 new TextComponentTranslation(flag.getAttachment().getTranslationKey() + ".name")
@@ -1077,7 +1076,7 @@ public class ModificationGUI {
             GlStateManager.enableTexture2D();
             int space = 0;
             for (String splitted : args) {
-                GUIRenderHelper.drawScaledString(splitted, mouseX + 2, mouseY + 2 + space, 1.0, ColorPalette.WHITE);
+                GUIRenderHelper.drawScaledString(splitted, mouseX + 2, mouseY + 2 + space, 1.0, WHITE);
                 space += 10;
             }
 
