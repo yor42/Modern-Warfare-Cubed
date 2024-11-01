@@ -2,7 +2,7 @@ package com.paneedah.mwc.tileentities;
 
 import dev.redstudio.redcore.utils.AABBUtil;
 import com.paneedah.mwc.MWC;
-import com.paneedah.mwc.proxies.CommonProxy;
+import com.paneedah.weaponlib.ModContext;
 import com.paneedah.weaponlib.tile.CustomTileEntityBlock;
 import com.paneedah.weaponlib.tile.LootBoxConfiguration;
 import net.minecraft.block.material.Material;
@@ -12,9 +12,7 @@ import org.lwjgl.opengl.GL11;
 
 public class TileEntities {
 
-    public static void init(CommonProxy commonProxy) {
-        new TurretBaseFactory().createTileEntity(MWC.modContext);
-
+    public static void createTileEntity(ModContext modContext) {
         new LootBoxConfiguration()
                 .withMaterial(Material.ROCK)
                 .withName("weapons_case")
