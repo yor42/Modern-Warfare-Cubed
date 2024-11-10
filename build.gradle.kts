@@ -113,7 +113,7 @@ tasks {
         inputs.properties(expandProperties)
 
         filesMatching("**/*.*") {
-            val exclusions = listOf(".png", ".obj", ".frag", ".ogg", "craftingmappings.json")
+            val exclusions = listOf(".png", "_at.cfg", ".refmap.json", ".obj", ".frag", ".ogg", "craftingmappings.json")
             if (!exclusions.any { path.endsWith(it) })
                 expand(expandProperties)
         }
