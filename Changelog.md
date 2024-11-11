@@ -102,7 +102,7 @@ like knowing which weapon is better or whether an attachment will be useful to y
 - Updated to [io.freefair.lombok](https://plugins.gradle.org/plugin/io.freefair.lombok) 8.7.1
 - Remade the build script
 - Switched from [RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) tags to [gradle-buildconfig-plugin](https://github.com/gmazzo/gradle-buildconfig-plugin)
-- Updated [MixinBooter](https://www.curseforge.com/minecraft/mc-mods/mixin-booter) dependency to 9.4
+- Updated [MixinBooter](https://www.curseforge.com/minecraft/mc-mods/mixin-booter) dependency to 10.1
 - Updated to [org.jetbrains.gradle.plugin.idea-ext](https://github.com/JetBrains/gradle-idea-ext-plugin) 1.1.9
 - Props now use Red Core `AABBUtil`
 - Updated [Red Core](https://www.curseforge.com/minecraft/mc-mods/red-core) dependency to 0.6-Dev-8
