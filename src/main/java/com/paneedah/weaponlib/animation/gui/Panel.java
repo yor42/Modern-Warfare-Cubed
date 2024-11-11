@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.GlStateManager;
 import java.awt.*;
 import java.util.ArrayList;
 
-@Getter @Setter
+@Getter
+@Setter
 public class Panel {
 
 

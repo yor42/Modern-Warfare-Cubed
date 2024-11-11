@@ -6,7 +6,8 @@ import net.minecraft.client.renderer.GlStateManager;
 
 import java.awt.*;
 
-@Getter @Setter
+@Getter
+@Setter
 public class Button {
 
     public double x, y;

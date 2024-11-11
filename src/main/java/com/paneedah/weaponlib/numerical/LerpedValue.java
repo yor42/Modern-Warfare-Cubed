@@ -6,8 +6,8 @@ import lombok.NoArgsConstructor;
 
 import static com.paneedah.mwc.proxies.ClientProxy.MC;
 
-@NoArgsConstructor
 @Getter
+@NoArgsConstructor
 public class LerpedValue {
 
     public double previousValue;
