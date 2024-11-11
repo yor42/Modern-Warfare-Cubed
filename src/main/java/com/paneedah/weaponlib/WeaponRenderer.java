@@ -17,6 +17,8 @@ import com.paneedah.weaponlib.config.BalancePackManager;
 import com.paneedah.weaponlib.config.ModernConfigManager;
 import com.paneedah.weaponlib.render.*;
 import com.paneedah.weaponlib.shader.jim.Shader;
+import lombok.Getter;
+import lombok.Setter;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.client.gui.ScaledResolution;
@@ -312,88 +314,15 @@ public class WeaponRenderer extends ModelSource implements IBakedModel {
 
         private boolean compoundReloadUsesTactical;
         private boolean compoundReloadEmptyUsesTactical;
-        private boolean hasTacticalReload;
-
-        public boolean isHasTacticalReload() {
-            return hasTacticalReload;
-        }
-
-        public void setHasTacticalReload(boolean hasTacticalReload) {
-            this.hasTacticalReload = hasTacticalReload;
-        }
-
-        public boolean isHasUnloadEmpty() {
-            return hasUnloadEmpty;
-        }
-
-        public void setHasUnloadEmpty(boolean hasUnloadEmpty) {
-            this.hasUnloadEmpty = hasUnloadEmpty;
-        }
-
-        public boolean isHasLoadEmpty() {
-            return hasLoadEmpty;
-        }
-
-        public void setHasLoadEmpty(boolean hasLoadEmpty) {
-            this.hasLoadEmpty = hasLoadEmpty;
-        }
-
-        public boolean isHasCompoundReloadEmpty() {
-            return hasCompoundReloadEmpty;
-        }
-
-        public void setHasCompoundReloadEmpty(boolean hasCompoundReloadEmpty) {
-            this.hasCompoundReloadEmpty = hasCompoundReloadEmpty;
-        }
-
-        public boolean isHasCompoundReload() {
-            return hasCompoundReload;
-        }
-
-        public void setHasCompoundReload(boolean hasCompoundReload) {
-            this.hasCompoundReload = hasCompoundReload;
-        }
-
-        public boolean isHasLoad() {
-            return hasLoad;
-        }
-
-        public void setHasLoad(boolean hasLoad) {
-            this.hasLoad = hasLoad;
-        }
-
-        public boolean isHasUnload() {
-            return hasUnload;
-        }
-
-        public void setHasUnload(boolean hasUnload) {
-            this.hasUnload = hasUnload;
-        }
-
-        public boolean isHasDraw() {
-            return hasDraw;
-        }
-
-        public void setHasDraw(boolean hasDraw) {
-            this.hasDraw = hasDraw;
-        }
-
-        public boolean isHasInspect() {
-            return hasInspect;
-        }
-
-        public void setHasInspect(boolean hasInspect) {
-            this.hasInspect = hasInspect;
-        }
-
-        private boolean hasUnloadEmpty;
-        private boolean hasLoadEmpty;
-        private boolean hasCompoundReloadEmpty;
-        private boolean hasCompoundReload;
-        private boolean hasLoad;
-        private boolean hasUnload;
-        private boolean hasDraw;
-        private boolean hasInspect;
+        @Setter @Getter private boolean hasTacticalReload;
+        @Setter @Getter private boolean hasUnloadEmpty;
+        @Setter @Getter private boolean hasLoadEmpty;
+        @Setter @Getter private boolean hasCompoundReloadEmpty;
+        @Setter @Getter private boolean hasCompoundReload;
+        @Setter @Getter private boolean hasLoad;
+        @Setter @Getter private boolean hasUnload;
+        @Setter @Getter private boolean hasDraw;
+        @Setter @Getter private boolean hasInspect;
         private boolean hasEjectSpentRound;
         private boolean hasEjectSpentRoundAimed;
 
@@ -1243,7 +1172,7 @@ public class WeaponRenderer extends ModelSource implements IBakedModel {
             SingleAnimation compound = set.getSingleAnimation(BBLoader.KEY_COMPOUND_RELOAD);
             if (compound != null) {
                 if (compound.hasBone(BBLoader.KEY_MAGIC_MAGAZINE)) {
-                    if (compound.getBone(BBLoader.KEY_MAGIC_MAGAZINE).bbTransition.size() > 1) {
+                    if (compound.getBone(BBLoader.KEY_MAGIC_MAGAZINE).getBbTransition().size() > 1) {
                         compoundReloadUsesTactical = true;
                     }
                 }
@@ -1252,7 +1181,7 @@ public class WeaponRenderer extends ModelSource implements IBakedModel {
             SingleAnimation compoundEmpty = set.getSingleAnimation(BBLoader.KEY_COMPOUND_RELOAD_EMPTY);
             if (compoundEmpty != null) {
                 if (compoundEmpty.hasBone(BBLoader.KEY_MAGIC_MAGAZINE)) {
-                    if (compoundEmpty.getBone(BBLoader.KEY_MAGIC_MAGAZINE).bbTransition.size() > 1) {
+                    if (compoundEmpty.getBone(BBLoader.KEY_MAGIC_MAGAZINE).getBbTransition().size() > 1) {
                         compoundReloadEmptyUsesTactical = true;
                     }
                 }
@@ -2737,7 +2666,7 @@ public class WeaponRenderer extends ModelSource implements IBakedModel {
                     .withPartPositionFunction(Part.RIGHT_HAND, createWeaponPartPositionFunction(r));
 
 
-            t.sound = p.getSound();
+            t.sound = p.getSoundEvent();
 
 
             for (Entry<Part, List<Transition<RenderContext<RenderableState>>>> e : custom.entrySet()) {
