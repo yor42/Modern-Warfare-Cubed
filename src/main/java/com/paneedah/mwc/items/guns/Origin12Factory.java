@@ -8,7 +8,7 @@ import com.paneedah.mwc.weapons.Attachments;
 import com.paneedah.mwc.weapons.AuxiliaryAttachments;
 import com.paneedah.mwc.weapons.Magazines;
 import com.paneedah.weaponlib.*;
-import com.paneedah.weaponlib.animation.Transform;
+import com.paneedah.mwc.rendering.Transform;
 import com.paneedah.weaponlib.animation.Transition;
 import com.paneedah.weaponlib.compatibility.RecoilParam;
 import com.paneedah.weaponlib.config.BalancePackManager.GunConfigurationGroup;
@@ -386,8 +386,8 @@ public class Origin12Factory {
                                 new Transform()
                                         .withPosition(-1.545000f, 4.665000f, -2.605000f)
                                         .withRotation(0.000000f, 1.000000f, 9.911787f)
-                                        .withRotationPoint(-0.470000f, -1.260000f, 0.220000f)
-                                        .withScale(3.0, 3.0, 3.0)
+                                        .withPivotPoint(-0.470000f, -1.260000f, 0.220000f)
+                                        .withScale(3.0F, 3.0F, 3.0F)
                         )
 
                         .withFirstPersonHandPositioning(
@@ -395,17 +395,17 @@ public class Origin12Factory {
                                 // Left hand
                                 new Transform()
                                         .withPosition(1.370000f, 0.705000f, -0.980000f)
-                                        .withBBRotation(-9.3558, -36.5488, 60.0121)
-                                        .withScale(2.6, 2.6, 4.0)
-                                        .withRotationPoint(0, 0, 0),
+                                        .withBBRotation(-9.3558F, -36.5488F, 60.0121F)
+                                        .withScale(2.6F, 2.6F, 4.0F)
+                                        .withPivotPoint(0, 0, 0),
 
 
                                 // Right hand
                                 new Transform()
-                                        .withPosition(-0.2, 0.1, 2)
-                                        .withRotation(-5.4027, -4.7805, -1.6694)
-                                        .withScale(3.5, 3.5, 3.5)
-                                        .withRotationPoint(0, 0, 0)
+                                        .withPosition(-0.2F, 0.1F, 2)
+                                        .withRotation(-5.4027F, -4.7805F, -1.6694F)
+                                        .withScale(3.5F, 3.5F, 3.5F)
+                                        .withPivotPoint(0, 0, 0)
 
                         )
 
@@ -621,17 +621,17 @@ public class Origin12Factory {
                             new Transform()
                                     .withPosition(-1.545000f, 5.305000f, -5.205000f)
                                     .withRotation(-3.220844f, -26.042916f, -15.848692f)
-                                    .withRotationPoint(-0.350000f, -2.900000f, -0.100000f)
+                                    .withPivotPoint(-0.350000f, -2.900000f, -0.100000f)
                                     .withScale(3.000000f, 3.000000f, 3.000000f)
-                                    .doGLDirect();
+                                    .applyTransformations();
                         })
                         .withFirstPersonPositioningModifyingAlt((renderContext) -> {
                             new Transform()
                                     .withPosition(-1.545000f, 5.305000f, -6.765000f)
                                     .withRotation(-3.220844f, -42.465731f, -15.848692f)
-                                    .withRotationPoint(-0.350000f, -2.900000f, -0.100000f)
+                                    .withPivotPoint(-0.350000f, -2.900000f, -0.100000f)
                                     .withScale(3.000000f, 3.000000f, 3.000000f)
-                                    .doGLDirect();
+                                    .applyTransformations();
                         })
 
                         .withFirstPersonHandPositioningModifying(
@@ -639,17 +639,17 @@ public class Origin12Factory {
                                     new Transform()
                                             .withPosition(4.370000f, 0.705000f, 2.100000f)
                                             .withRotation(77.474485f, 36.548800f, 14.076018f)
-                                            .withScale(2.6, 2.6, 4.0)
-                                            .withRotationPoint(0.000000f, 0.000000f, 0.000000f)
-                                            .doGLDirect();
+                                            .withScale(2.6F, 2.6F, 4.0F)
+                                            .withPivotPoint(0.000000f, 0.000000f, 0.000000f)
+                                            .applyTransformations();
                                 },
                                 (renderContext) -> {
                                     new Transform()
-                                            .withPosition(-0.2, 0.1, 2)
-                                            .withRotation(-5.4027, -4.7805, -1.6694)
-                                            .withScale(3.5, 3.5, 3.5)
-                                            .withRotationPoint(0, 0, 0)
-                                            .doGLDirect();
+                                            .withPosition(-0.2F, 0.1F, 2)
+                                            .withRotation(-5.4027F, -4.7805F, -1.6694F)
+                                            .withScale(3.5F, 3.5F, 3.5F)
+                                            .withPivotPoint(0, 0, 0)
+                                            .applyTransformations();
                                 })
 
                         .withFirstPersonHandPositioningModifyingAlt(
@@ -658,16 +658,16 @@ public class Origin12Factory {
                                             .withPosition(4.370000f, 0.705000f, 2.100000f)
                                             .withRotation(77.474485f, 36.548800f, 14.076018f)
                                             .withScale(2.600000f, 2.600000f, 4.000000f)
-                                            .withRotationPoint(0.000000f, 0.000000f, 0.000000f)
-                                            .doGLDirect();
+                                            .withPivotPoint(0.000000f, 0.000000f, 0.000000f)
+                                            .applyTransformations();
                                 },
                                 (renderContext) -> {
                                     new Transform()
                                             .withPosition(-0.600000f, 0.340000f, 1.880000f)
                                             .withRotation(-12.193518f, -4.780500f, 1.399459f)
-                                            .withScale(3.5, 3.5, 3.5)
-                                            .withRotationPoint(0.000000f, 0.000000f, 0.000000f)
-                                            .doGLDirect();
+                                            .withScale(3.5F, 3.5F, 3.5F)
+                                            .withPivotPoint(0.000000f, 0.000000f, 0.000000f)
+                                            .applyTransformations();
                                 })
 
                         .withThirdPersonLeftHandPositioningReloading(

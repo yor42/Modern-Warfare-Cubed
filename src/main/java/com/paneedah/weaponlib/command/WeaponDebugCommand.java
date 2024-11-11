@@ -1,6 +1,7 @@
 package com.paneedah.weaponlib.command;
 
 import com.paneedah.weaponlib.*;
+import dev.redstudio.redcore.math.vectors.Vector3F;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.Vec3d;
@@ -45,11 +46,11 @@ public class WeaponDebugCommand extends TidyCompatibleCommand {
 
                 System.out.println(Arrays.toString(args));
 
-                double x = Double.parseDouble(args[0]);
-                double y = Double.parseDouble(args[1]);
-                double z = Double.parseDouble(args[2]);
+                final float x = Float.parseFloat(args[0]);
+                final float y = Float.parseFloat(args[1]);
+                final float z = Float.parseFloat(args[2]);
                 System.out.println("Oye cabron");
-                i.rotationPoint = new Vec3d(x, y, z);
+                i.pivotPoint = new Vector3F(x, y, z);
                 sendFormattedMessage(sender, "The weapon name is: " + getSecondaryColor() + pwi.getWeapon().getName());
                 System.out.println("yo");
             }

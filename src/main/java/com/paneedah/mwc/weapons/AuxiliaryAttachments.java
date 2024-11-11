@@ -392,7 +392,7 @@ public class AuxiliaryAttachments {
         G11Action = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA2)
                 // .withCreativeTab(MWC.gunsTab)
-                .withRotationPoint(0.1452000024497508, -0.805199984866377, 1.229600028479095)
+                .withPivotPoint(0.1452000024497508F, -0.805199984866377F, 1.229600028479095F)
                 .withModel(new com.paneedah.mwc.models.G11Action(), "gun.png")
                 .withName("G11Action")
                 .withRenderablePart().withTextureName("Dummy.png")
@@ -507,7 +507,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(MWC.gunsTab)
                 .withModel(new com.paneedah.mwc.models.PythonChamber(), "Python.png")
                 .withName("PythonChamber")
-                .withRotationPoint(-0.11759999474287039, -0.9064000131249434, -0.8943999600172051)
+                .withPivotPoint(-0.11759999474287039F, -0.9064000131249434F, -0.8943999600172051F)
                 .withRenderablePart().withTextureName("Dummy.png")
                 .build(MWC.modContext);
 
@@ -516,7 +516,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(MWC.gunsTab)
                 .withModel(new com.paneedah.mwc.models.TaurusLoader(), "taurusraginghunter.png")
                 .withName("RevolverSpeedloader")
-                .withRotationPoint(-0.11759999474287039, 0.07280001164674715, 0.8548000601351243)
+                .withPivotPoint(-0.11759999474287039F, 0.07280001164674715F, 0.8548000601351243F)
                 .withRenderablePart().withTextureName("Dummy.png")
                 .build(MWC.modContext);
 
@@ -525,7 +525,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(MWC.gunsTab)
                 .withModel(new com.paneedah.mwc.models.TaurusBullets(), "taurusraginghunter.png")
                 .withName("RevolverSpeedloaderBullets")
-                .withRotationPoint(-0.11759999474287039, -0.9064000131249434, -0.8943999600172051)
+                .withPivotPoint(-0.11759999474287039F, -0.9064000131249434F, -0.8943999600172051F)
                 .withRenderablePart().withTextureName("Dummy.png")
                 .build(MWC.modContext);
 
@@ -534,7 +534,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(MWC.gunsTab)
                 .withModel(new com.paneedah.mwc.models.TaurusRagingHunterChamber(), "taurusraginghunter.png")
                 .withName("MagnumChamber")
-                .withRotationPoint(-0.11759999474287039, -0.9064000131249434, -0.8943999600172051)
+                .withPivotPoint(-0.11759999474287039F, -0.9064000131249434F, -0.8943999600172051F)
                 .withRenderablePart().withTextureName("Dummy.png")
                 .build(MWC.modContext);
 
@@ -722,7 +722,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(MWC.gunsTab)
                 .withModel(new com.paneedah.mwc.models.MP7Grip(), "mp7.png")
                 .withName("MP7Grip")
-                .withRotationPoint(-0.12000000357627871, -0.20000000596046452, -1.6000000476837126)
+                .withPivotPoint(-0.12000000357627871F, -0.20000000596046452F, -1.6000000476837126F)
                 .withRenderablePart()
 
                 .withTextureName("Dummy.png").build(MWC.modContext);
@@ -786,7 +786,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(MWC.gunsTab)
                 .withModel(new com.paneedah.mwc.models.MP5boltaction(), "MP5.png")
                 .withName("MP5boltaction")
-                .withRotationPoint(-0.12000000357627871, -1.1200000333786013, -2.320000069141389)
+                .withPivotPoint(-0.12000000357627871F, -1.1200000333786013F, -2.320000069141389F)
                 .withRenderablePart()
 
                 .withTextureName("Dummy.png").build(MWC.modContext);
@@ -796,7 +796,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(MWC.gunsTab)
                 .withModel(new com.paneedah.mwc.models.UMP45Action(), "ump45.png")
                 .withName("UMP45action")
-                .withRotationPoint(-0.12000000357627871, -1.1200000333786013, -2.320000069141389)
+                .withPivotPoint(-0.12000000357627871F, -1.1200000333786013F, -2.320000069141389F)
                 .withRenderablePart()
 
                 .withTextureName("Dummy.png").build(MWC.modContext);
@@ -824,7 +824,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(MWC.gunsTab)
                 .withModel(new com.paneedah.mwc.models.G3ChargingHandle(), "G3.png")
                 .withName("G3Bolt")
-                .withRotationPoint(0.0, -1.0800000321865084, -4.120000122785571)
+                .withPivotPoint(0.0F, -1.0800000321865084F, -4.120000122785571F)
                 .withRenderablePart()
 
                 .withTextureName("Dummy.png").build(MWC.modContext);
@@ -980,7 +980,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mwc.models.M249Hatch(), "m249.png")
                 .withModel(new com.paneedah.mwc.models.AKRail(), "akrail.png")
                 .withModel(new com.paneedah.mwc.models.M249RearSight(), "gun.png")
-                .withRotationPoint(-0.12079999459981924, -1.4240000168085098, -2.392400065904859)
+                .withPivotPoint(-0.12079999459981924F, -1.4240000168085098F, -2.392400065904859F)
                 .withName("M249Hatch")
                 .withRenderablePart()
 
@@ -1371,7 +1371,7 @@ public class AuxiliaryAttachments {
 
         M40A6BoltAction = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA)
-                .withRotationPoint(0.2791999875187876, -1.7068000399291512, 0.3259999854266646)
+                .withPivotPoint(0.2791999875187876F, -1.7068000399291512F, 0.3259999854266646F)
                 .withModel(new com.paneedah.mwc.models.GunwerksHAMRboltaction(), "gunwerkshamr")
                 .withName("M40A6BoltAction")
                 .withRenderablePart().withTextureName("Dummy.png")
@@ -1379,7 +1379,7 @@ public class AuxiliaryAttachments {
 
         M40A6BoltActionPrime = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA2)
-                .withRotationPoint(0.12159999456405646, -1.5596000435292718, 0.8224000258207329)
+                .withPivotPoint(0.12159999456405646F, -1.5596000435292718F, 0.8224000258207329F)
                 .withModel(new com.paneedah.mwc.models.GunwerksHAMRboltactionPrime(), "gunwerkshamr")
                 .withName("M40A6BoltActionPrime")
                 .withRenderablePart().withTextureName("Dummy.png")

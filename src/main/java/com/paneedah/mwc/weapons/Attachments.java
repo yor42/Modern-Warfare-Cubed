@@ -13197,7 +13197,7 @@ public class Attachments {
                     }
                 })
                 .withName("Acog")
-                .withRotationPoint(-0.12079999459981924, -1.4240000168085098, -2.392400065904859)
+                .withPivotPoint(-0.12079999459981924F, -1.4240000168085098F, -2.392400065904859F)
 
                 .withTextureName("Dummy.png")
                 .build(MWC.modContext);
@@ -13270,7 +13270,7 @@ public class Attachments {
                     }
                 })
                 .withName("Specter").withTextureName("Dummy.png")
-                .withRotationPoint(-0.12079999459981924, -1.4240000168085098, -2.392400065904859)
+                .withPivotPoint(-0.12079999459981924F, -1.4240000168085098F, -2.392400065904859F)
                 .build(MWC.modContext);
 
         Holographic = new ItemScope.Builder()
@@ -13341,7 +13341,7 @@ public class Attachments {
                     }
                 })
                 .withName("Holographic2").withTextureName("Dummy.png")
-                .withRotationPoint(-0.12079999459981924, -1.4240000168085098, -2.392400065904859)
+                .withPivotPoint(-0.12079999459981924F, -1.4240000168085098F, -2.392400065904859F)
                 .build(MWC.modContext);
 
         HolographicAlt = new ItemScope.Builder()
@@ -13699,7 +13699,7 @@ public class Attachments {
                     }
                 })
                 .withName("AimpointCompM2").withTextureName("Dummy.png")
-                .withRotationPoint(-0.12079999459981924, -1.4240000168085098, -2.392400065904859)
+                .withPivotPoint(-0.12079999459981924F, -1.4240000168085098F, -2.392400065904859F)
                 .build(MWC.modContext);
 
         AimpointCompM5 = new ItemScope.Builder()
@@ -14151,7 +14151,7 @@ public class Attachments {
                     }
                 })
                 .withName("LeupoldRailScope")
-                .withRotationPoint(-0.12079999459981924, -1.4240000168085098, -2.392400065904859)
+                .withPivotPoint(-0.12079999459981924F, -1.4240000168085098F, -2.392400065904859F)
                 .withTextureName("Dummy.png").build(MWC.modContext);
 
         NightRaider = new ItemScope.Builder()

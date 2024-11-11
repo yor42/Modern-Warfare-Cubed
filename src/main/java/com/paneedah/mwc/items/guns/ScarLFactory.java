@@ -11,7 +11,7 @@ import com.paneedah.weaponlib.AttachmentCategory;
 import com.paneedah.weaponlib.RenderableState;
 import com.paneedah.weaponlib.Weapon;
 import com.paneedah.weaponlib.WeaponRenderer;
-import com.paneedah.weaponlib.animation.Transform;
+import com.paneedah.mwc.rendering.Transform;
 import com.paneedah.weaponlib.animation.Transition;
 import com.paneedah.weaponlib.compatibility.RecoilParam;
 import com.paneedah.weaponlib.config.BalancePackManager.GunConfigurationGroup;
@@ -399,7 +399,7 @@ public class ScarLFactory implements GunFactory {
 
                         .withModel(new ScarL())
                         .withActionPiece(AuxiliaryAttachments.ScarAction)
-                        .withActionTransform(new Transform().withPosition(0, 0, 1.3))
+                        .withActionTransform(new Transform().withPosition(0, 0, 1.3F))
                         .withEntityPositioning(itemStack -> {
                             GL11.glScaled(0.5F, 0.5F, 0.5F);
                             GL11.glTranslatef(0, 0f, 3f);
@@ -421,8 +421,8 @@ public class ScarLFactory implements GunFactory {
                                 new Transform()
                                         .withPosition(-1.265000f, 4.625000f, -3.765000f)
                                         .withRotation(0.000000f, 1.000000f, 6.300000f)
-                                        .withRotationPoint(-0.350000f, -2.900000f, -0.100000f)
-                                        .withScale(3.0, 3.0, 3.0)
+                                        .withPivotPoint(-0.350000f, -2.900000f, -0.100000f)
+                                        .withScale(3.0F, 3.0F, 3.0F)
                         )
 
                         .withFirstPersonHandPositioning(
@@ -430,17 +430,17 @@ public class ScarLFactory implements GunFactory {
                                 // Left hand
                                 new Transform()
                                         .withPosition(1.050000f, 0.065000f, -0.500000f)
-                                        .withBBRotation(-8.1997, -23.6991, 57.7232)
-                                        .withScale(2.6, 2.6, 4.0)
-                                        .withRotationPoint(0, 0, 0),
+                                        .withBBRotation(-8.1997F, -23.6991F, 57.7232F)
+                                        .withScale(2.6F, 2.6F, 4.0F)
+                                        .withPivotPoint(0, 0, 0),
 
 
                                 // Right hand
                                 new Transform()
-                                        .withPosition(-0.2, 0.1, 2)
-                                        .withRotation(-5.4027, -4.7805, -1.6694)
-                                        .withScale(3.5, 3.5, 3.5)
-                                        .withRotationPoint(0, 0, 0)
+                                        .withPosition(-0.2F, 0.1F, 2)
+                                        .withRotation(-5.4027F, -4.7805F, -1.6694F)
+                                        .withScale(3.5F, 3.5F, 3.5F)
+                                        .withPivotPoint(0, 0, 0)
 
                         )
 
@@ -640,17 +640,17 @@ public class ScarLFactory implements GunFactory {
                             new Transform()
                                     .withPosition(-1.985000f, 5.145000f, -5.245000f)
                                     .withRotation(0.000000f, -30.514396f, -26.062789f)
-                                    .withRotationPoint(-0.350000f, -2.900000f, -0.100000f)
+                                    .withPivotPoint(-0.350000f, -2.900000f, -0.100000f)
                                     .withScale(3.000000f, 3.000000f, 3.000000f)
-                                    .doGLDirect();
+                                    .applyTransformations();
                         })
                         .withFirstPersonPositioningModifyingAlt((renderContext) -> {
                             new Transform()
                                     .withPosition(-1.265000f, 4.745000f, -8.285000f)
                                     .withRotation(2.793742f, -46.352252f, -19.231070f)
-                                    .withRotationPoint(-0.350000f, -2.900000f, -0.100000f)
+                                    .withPivotPoint(-0.350000f, -2.900000f, -0.100000f)
                                     .withScale(3.000000f, 3.000000f, 3.000000f)
-                                    .doGLDirect();
+                                    .applyTransformations();
                         })
 
                         .withFirstPersonHandPositioningModifying(
@@ -658,17 +658,17 @@ public class ScarLFactory implements GunFactory {
                                     new Transform()
                                             .withPosition(2.330000f, 0.065000f, 0.140000f)
                                             .withRotation(78.544055f, 23.699100f, 18.430633f)
-                                            .withScale(2.6, 2.6, 4.0)
-                                            .withRotationPoint(0.000000f, 0.000000f, 0.000000f)
-                                            .doGLDirect();
+                                            .withScale(2.6F, 2.6F, 4.0F)
+                                            .withPivotPoint(0.000000f, 0.000000f, 0.000000f)
+                                            .applyTransformations();
                                 },
                                 (renderContext) -> {
                                     new Transform()
-                                            .withPosition(-0.2, 0.1, 2)
-                                            .withRotation(-5.4027, -4.7805, -1.6694)
-                                            .withScale(3.5, 3.5, 3.5)
-                                            .withRotationPoint(0, 0, 0)
-                                            .doGLDirect();
+                                            .withPosition(-0.2F, 0.1F, 2)
+                                            .withRotation(-5.4027F, -4.7805F, -1.6694F)
+                                            .withScale(3.5F, 3.5F, 3.5F)
+                                            .withPivotPoint(0, 0, 0)
+                                            .applyTransformations();
                                 })
 
                         .withFirstPersonHandPositioningModifyingAlt(
@@ -677,16 +677,16 @@ public class ScarLFactory implements GunFactory {
                                             .withPosition(2.330000f, 0.065000f, 0.140000f)
                                             .withRotation(78.544055f, 23.699100f, 18.430633f)
                                             .withScale(2.600000f, 2.600000f, 4.000000f)
-                                            .withRotationPoint(0.000000f, 0.000000f, 0.000000f)
-                                            .doGLDirect();
+                                            .withPivotPoint(0.000000f, 0.000000f, 0.000000f)
+                                            .applyTransformations();
                                 },
                                 (renderContext) -> {
                                     new Transform()
                                             .withPosition(-0.600000f, 0.340000f, 1.880000f)
                                             .withRotation(-12.193518f, -4.780500f, 1.399459f)
-                                            .withScale(3.5, 3.5, 3.5)
-                                            .withRotationPoint(0.000000f, 0.000000f, 0.000000f)
-                                            .doGLDirect();
+                                            .withScale(3.5F, 3.5F, 3.5F)
+                                            .withPivotPoint(0.000000f, 0.000000f, 0.000000f)
+                                            .applyTransformations();
                                 })
 
                         .withThirdPersonLeftHandPositioningReloading(

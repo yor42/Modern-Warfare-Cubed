@@ -3,7 +3,7 @@ package com.paneedah.mwc.equipment;
 import com.paneedah.mwc.MWC;
 import com.paneedah.weaponlib.ItemVest;
 import com.paneedah.weaponlib.ModContext;
-import com.paneedah.weaponlib.animation.Transform;
+import com.paneedah.mwc.rendering.Transform;
 import org.lwjgl.opengl.GL11;
 
 public class Vests {
@@ -23,10 +23,10 @@ public class Vests {
 //        })
                 .withInventoryPositioning(() -> {
                     new Transform()
-                            .withPosition(-0.15, -4, -0.25)
+                            .withPosition(-0.15F, -4, -0.25F)
                             .withRotation(-15, 150, 0)
                             .withScale(3, 3, 3)
-                            .doGLDirect();
+                            .applyTransformations();
                 })
                 .build(modContext);
 
@@ -43,10 +43,10 @@ public class Vests {
 //        })
                 .withInventoryPositioning(() -> {
                     new Transform()
-                            .withPosition(-0.15, -3.9, -0.25)
+                            .withPosition(-0.15F, -3.9F, -0.25F)
                             .withRotation(-15, 150, 0)
                             .withScale(3, 3, 3)
-                            .doGLDirect();
+                            .applyTransformations();
                 })
                 .build(MWC.modContext);
 
@@ -63,10 +63,10 @@ public class Vests {
 //        })
                 .withInventoryPositioning(() -> {
                     new Transform()
-                            .withPosition(-0.15, -3.9, -0.25)
+                            .withPosition(-0.15F, -3.9F, -0.25F)
                             .withRotation(-15, 150, 0)
                             .withScale(3, 3, 3)
-                            .doGLDirect();
+                            .applyTransformations();
                 })
                 .build(modContext);
 
@@ -83,10 +83,10 @@ public class Vests {
 //        })
                 .withInventoryPositioning(() -> {
                     new Transform()
-                            .withPosition(-0.15, -3.9, -0.25)
+                            .withPosition(-0.15F, -3.9F, -0.25F)
                             .withRotation(-15, 150, 0)
                             .withScale(3, 3, 3)
-                            .doGLDirect();
+                            .applyTransformations();
                 })
                 .build(modContext);
 
@@ -103,10 +103,10 @@ public class Vests {
 //        })
                 .withInventoryPositioning(() -> {
                     new Transform()
-                            .withPosition(-0.15, -3.9, -0.25)
+                            .withPosition(-0.15F, -3.9F, -0.25F)
                             .withRotation(-15, 150, 0)
                             .withScale(3, 3, 3)
-                            .doGLDirect();
+                            .applyTransformations();
                 })
                 .build(modContext);
 
@@ -123,10 +123,10 @@ public class Vests {
                 })
                 .withInventoryPositioning(() -> {
                     new Transform()
-                            .withPosition(-0.15, -3.9, -0.25)
+                            .withPosition(-0.15F, -3.9F, -0.25F)
                             .withRotation(-15, 150, 0)
                             .withScale(3, 3, 3)
-                            .doGLDirect();
+                            .applyTransformations();
                 })
                 .build(modContext);
 
@@ -145,13 +145,13 @@ public class Vests {
                 .withEntityPositioning(() -> new Transform()
                         .withPosition(-0.5F, -1.9F, 0.5F)
                         .withScale(1, 1, 1)
-                        .doGLDirect())
+                        .applyTransformations())
                 .withInventoryPositioning(() -> {
                     new Transform()
-                            .withPosition(-0.15, -3.6, -0.25)
+                            .withPosition(-0.15F, -3.6F, -0.25F)
                             .withRotation(-15, 150, 0)
-                            .withScale(2.6, 2.6, 2.6)
-                            .doGLDirect();
+                            .withScale(2.6F, 2.6F, 2.6F)
+                            .applyTransformations();
                 })
                 .build(modContext);
 
@@ -171,13 +171,13 @@ public class Vests {
                 .withEntityPositioning(() -> new Transform()
                         .withPosition(-0.5F, -1.9F, 0.5F)
                         .withScale(1, 1, 1)
-                        .doGLDirect())
+                        .applyTransformations())
                 .withInventoryPositioning(() -> {
                     new Transform()
-                            .withPosition(-0.15, -3.6, -0.25)
+                            .withPosition(-0.15F, -3.6F, -0.25F)
                             .withRotation(-15, 150, 0)
-                            .withScale(2.6, 2.6, 2.6)
-                            .doGLDirect();
+                            .withScale(2.6F, 2.6F, 2.6F)
+                            .applyTransformations();
                 })
                 .build(modContext);
 
@@ -197,13 +197,13 @@ public class Vests {
                 .withEntityPositioning(() -> new Transform()
                         .withPosition(-0.5F, -1.9F, 0.5F)
                         .withScale(1, 1, 1)
-                        .doGLDirect())
+                        .applyTransformations())
                 .withInventoryPositioning(() -> {
                     new Transform()
-                            .withPosition(-0.15, -3.6, -0.25)
+                            .withPosition(-0.15F, -3.6F, -0.25F)
                             .withRotation(-15, 150, 0)
-                            .withScale(2.6, 2.6, 2.6)
-                            .doGLDirect();
+                            .withScale(2.6F, 2.6F, 2.6F)
+                            .applyTransformations();
                 })
                 .build(modContext);
 
@@ -223,13 +223,13 @@ public class Vests {
                 .withEntityPositioning(() -> new Transform()
                         .withPosition(-0.5F, -1.9F, 0.5F)
                         .withScale(1, 1, 1)
-                        .doGLDirect())
+                        .applyTransformations())
                 .withInventoryPositioning(() -> {
                     new Transform()
-                            .withPosition(-0.15, -3.6, -0.25)
+                            .withPosition(-0.15F, -3.6F, -0.25F)
                             .withRotation(-15, 150, 0)
-                            .withScale(2.6, 2.6, 2.6)
-                            .doGLDirect();
+                            .withScale(2.6F, 2.6F, 2.6F)
+                            .applyTransformations();
                 })
                 .build(modContext);
     }

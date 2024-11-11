@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.paneedah.weaponlib.animation.Transform;
+import com.paneedah.mwc.rendering.Transform;
 import net.minecraft.util.ResourceLocation;
 
 import java.io.BufferedReader;
@@ -54,8 +54,8 @@ public class BBLoader {
     public static Transform test = new Transform()
             .withPosition(-2, 3, -2)
             .withRotation(0, 0, -0)
-            .withScale(3.0, 3.0, 3.0)
-            .withRotationPoint(-0.1, 1.0, 0.0);
+            .withScale(3.0F, 3.0F, 3.0F)
+            .withPivotPoint(-0.1F, 1.0F, 0.0F);
 
 
     private static String animationSuffix = ".animation.json";

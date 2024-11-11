@@ -249,7 +249,7 @@ public class Magazines {
                 .withCapacity(25)
                 .withCompatibleBullet(Bullets.Bullet45ACP)
                 .withName("VectorMag")
-                .withRotationPoint(-0.12000000357627871, 1.0400000309944155, -2.0400000607967383)
+                .withPivotPoint(-0.12000000357627871F, 1.0400000309944155F, -2.0400000607967383F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.KrissVectorMagazine(), "krissvector.png")
@@ -277,7 +277,7 @@ public class Magazines {
                 .withCapacity(50)
                 .withCompatibleBullet(Bullets.Bullet45ACP)
                 .withName("VectorDrumMag")
-                .withRotationPoint(-0.12000000357627871, 1.0400000309944155, -2.0400000607967383)
+                .withPivotPoint(-0.12000000357627871F, 1.0400000309944155F, -2.0400000607967383F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.KrissVectorMagazineDrum(), "krissvector.png")
@@ -305,7 +305,7 @@ public class Magazines {
                 .withCapacity(30)
                 .withCompatibleBullet(Bullets.Bullet556x45)
                 .withName("M4A1Mag_2")
-                .withRotationPoint(-0.16000000476837162, -0.16000000476837162, -1.5200000452995304)
+                .withPivotPoint(-0.16000000476837162F, -0.16000000476837162F, -1.5200000452995304F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.M4A1Mag(), "M4A1Magazine.png")
@@ -336,7 +336,7 @@ public class Magazines {
                 .withCapacity(20)
                 .withCompatibleBullet(Bullets.Bullet65)
                 .withName("NGSWR_Mag")
-                .withRotationPoint(-0.16000000476837162, -0.44000001311302195, -1.4800000441074375)
+                .withPivotPoint(-0.16000000476837162F, -0.44000001311302195F, -1.4800000441074375F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.NGSWRMag(), "ngswr.png")
@@ -363,7 +363,7 @@ public class Magazines {
                 .withCapacity(30)
                 .withCompatibleBullet(Bullets.Bullet556x45)
                 .withName("FamasF1Mag")
-                .withRotationPoint(-0.12000000357627871, 1.0400000309944155, -2.0400000607967383)
+                .withPivotPoint(-0.12000000357627871F, 1.0400000309944155F, -2.0400000607967383F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withRequiredAttachments(Attachments.FamasPlaceholder, Attachments.Vector556Handguard)
@@ -527,7 +527,7 @@ public class Magazines {
                 .withCapacity(100)
                 .withCompatibleBullet(Bullets.Bullet556x45)
                 .withName("M249Mag")
-                .withRotationPoint(0.8812000082910061, 0.8648000418066975, -1.40640004143715)
+                .withPivotPoint(0.8812000082910061F, 0.8648000418066975F, -1.40640004143715F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.M249Mag(), "m249.png")
@@ -584,7 +584,7 @@ public class Magazines {
                 .withCapacity(30)
                 .withCompatibleBullet(Bullets.Bullet762x35)
                 .withName("HoneyBadgerMag_2")
-                .withRotationPoint(-0.16000000476837162, -0.16000000476837162, -1.5200000452995304)
+                .withPivotPoint(-0.16000000476837162F, -0.16000000476837162F, -1.5200000452995304F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.M4A1Mag(), "M4A1Mag.png")
@@ -613,7 +613,7 @@ public class Magazines {
                 .withCapacity(30)
                 .withCompatibleBullet(Bullets.Bullet556x45)
                 .withName("M38Mag_2")
-                .withRotationPoint(-0.16000000476837162, -0.16000000476837162, -1.5200000452995304)
+                .withPivotPoint(-0.16000000476837162F, -0.16000000476837162F, -1.5200000452995304F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.M38Mag(), "M38Mag.png")
@@ -645,7 +645,7 @@ public class Magazines {
                 .withCapacity(30)
                 .withCompatibleBullet(Bullets.Bullet556x45)
                 .withName("socom_mag")
-                .withRotationPoint(-0.16000000476837162, -0.16000000476837162, -1.5200000452995304)
+                .withPivotPoint(-0.16000000476837162F, -0.16000000476837162F, -1.5200000452995304F)
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.SOCOM_Mag(), "socom_mag.png")
                 .withRequiredAttachments(Attachments.Placeholder, Attachments.M4Receiver, Attachments.VLTORReceiver,
@@ -725,7 +725,7 @@ public class Magazines {
                 .withCapacity(50)
                 .withCompatibleBullet(Bullets.Bullet556x45)
                 .withName("Stanag50")
-                .withRotationPoint(-0.16000000476837162, -0.16000000476837162, -1.5200000452995304)
+                .withPivotPoint(-0.16000000476837162F, -0.16000000476837162F, -1.5200000452995304F)
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.Stanag50(), "gun.png")
                 .withRequiredAttachments(Attachments.Placeholder,
@@ -756,7 +756,7 @@ public class Magazines {
                 .withCapacity(60)
                 .withCompatibleBullet(Bullets.Bullet556x45)
                 .withName("Stanag60")
-                .withRotationPoint(-0.16000000476837162, -0.16000000476837162, -1.5200000452995304)
+                .withPivotPoint(-0.16000000476837162F, -0.16000000476837162F, -1.5200000452995304F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.Stanag60(), "gun.png")
@@ -787,7 +787,7 @@ public class Magazines {
                 .withCapacity(100)
                 .withCompatibleBullet(Bullets.Bullet556x45)
                 .withName("Stanag100")
-                .withRotationPoint(-0.16000000476837162, -0.16000000476837162, -1.5200000452995304)
+                .withPivotPoint(-0.16000000476837162F, -0.16000000476837162F, -1.5200000452995304F)
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.NATODrum100(), "drum100rndmag.png")
                 .withRequiredAttachments(Attachments.Placeholder, Attachments.M4Receiver, Attachments.VLTORReceiver,
@@ -817,7 +817,7 @@ public class Magazines {
                 .withCapacity(30)
                 .withCompatibleBullet(Bullets.Bullet556x45)
                 .withName("G36CMag_2")
-                .withRotationPoint(-0.040000001192092904, -0.28000000834465033, -1.4400000429153446)
+                .withPivotPoint(-0.040000001192092904F, -0.28000000834465033F, -1.4400000429153446F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.G36CMag(), "g36c.png")
@@ -845,7 +845,7 @@ public class Magazines {
                 .withCapacity(30)
                 .withCompatibleBullet(Bullets.Bullet556x45)
                 .withName("AK101Mag_2")
-                .withRotationPoint(-0.12000000357627871, 0.28000000834465033, -1.8800000560283665)
+                .withPivotPoint(-0.12000000357627871F, 0.28000000834465033F, -1.8800000560283665F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.AK101Mag(), "ak101mag.png")
@@ -873,7 +873,7 @@ public class Magazines {
                 .withCapacity(30)
                 .withCompatibleBullet(Bullets.Bullet545x39)
                 .withName("AK74Mag")
-                .withRotationPoint(-0.12000000357627871, 0.28000000834465033, -1.8800000560283665)
+                .withPivotPoint(-0.12000000357627871F, 0.28000000834465033F, -1.8800000560283665F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.AK74Mag(), "ak74mag.png")
@@ -901,7 +901,7 @@ public class Magazines {
                 .withCapacity(60)
                 .withCompatibleBullet(Bullets.Bullet545x39)
                 .withName("AK74Mag60")
-                .withRotationPoint(-0.12000000357627871, 0.28000000834465033, -1.8800000560283665)
+                .withPivotPoint(-0.12000000357627871F, 0.28000000834465033F, -1.8800000560283665F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.AK60Mag(), "gun.png")
@@ -929,7 +929,7 @@ public class Magazines {
                 .withCapacity(60)
                 .withCompatibleBullet(Bullets.Bullet556x45)
                 .withName("AK60Mag")
-                .withRotationPoint(-0.12000000357627871, 0.28000000834465033, -1.8800000560283665)
+                .withPivotPoint(-0.12000000357627871F, 0.28000000834465033F, -1.8800000560283665F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.AK60Mag(), "gun.png")
@@ -957,7 +957,7 @@ public class Magazines {
                 .withCapacity(30)
                 .withCompatibleBullet(Bullets.Bullet762x39)
                 .withName("AK15Mag_2")
-                .withRotationPoint(-0.12000000357627871, 0.28000000834465033, -1.8800000560283665)
+                .withPivotPoint(-0.12000000357627871F, 0.28000000834465033F, -1.8800000560283665F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.AK15Mag(), "gun.png")
@@ -985,7 +985,7 @@ public class Magazines {
                 .withCapacity(30)
                 .withCompatibleBullet(Bullets.Bullet545x39)
                 .withName("AK12Mag_2")
-                .withRotationPoint(-0.12000000357627871, 0.28000000834465033, -1.8800000560283665)
+                .withPivotPoint(-0.12000000357627871F, 0.28000000834465033F, -1.8800000560283665F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.AK15Mag(), "gun.png")
@@ -1013,7 +1013,7 @@ public class Magazines {
                 .withCapacity(75)
                 .withCompatibleBullet(Bullets.Bullet545x39)
                 .withName("AK75Mag545x39")
-                .withRotationPoint(-0.12000000357627871, 0.28000000834465033, -1.8800000560283665)
+                .withPivotPoint(-0.12000000357627871F, 0.28000000834465033F, -1.8800000560283665F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.Mag75rnd(), "gun.png")
@@ -1040,7 +1040,7 @@ public class Magazines {
                 .withCapacity(31)
                 .withCompatibleBullet(Bullets.Bullet545x39)
                 .withName("AK12Mag")
-                .withRotationPoint(-0.12000000357627871, 0.36000001072883614, -1.9200000572204599)
+                .withPivotPoint(-0.12000000357627871F, 0.36000001072883614F, -1.9200000572204599F)
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.AK12Magazine(), "gun.png")
 
@@ -1067,7 +1067,7 @@ public class Magazines {
                 .withCapacity(30)
                 .withCompatibleBullet(Bullets.Bullet762x39)
                 .withName("AK47PMAGTan")
-                .withRotationPoint(-0.12000000357627871, 0.28000000834465033, -1.8800000560283665)
+                .withPivotPoint(-0.12000000357627871F, 0.28000000834465033F, -1.8800000560283665F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.AK15Mag(), "tan.png")
@@ -1095,7 +1095,7 @@ public class Magazines {
                 .withCapacity(30)
                 .withCompatibleBullet(Bullets.Bullet762x39)
                 .withName("AK47Mag")
-                .withRotationPoint(-0.12000000357627871, 0.28000000834465033, -1.880000056028367)
+                .withPivotPoint(-0.12000000357627871F, 0.28000000834465033F, -1.880000056028367F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.Magazine762x39(), "ak47mag.png")
@@ -1123,7 +1123,7 @@ public class Magazines {
                 .withCapacity(50)
                 .withCompatibleBullet(Bullets.Bullet762x39)
                 .withName("AK50Mag")
-                .withRotationPoint(-0.12000000357627871, 0.28000000834465033, -1.8800000560283665)
+                .withPivotPoint(-0.12000000357627871F, 0.28000000834465033F, -1.8800000560283665F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.Drum50AK(), "gun.png")
@@ -1151,7 +1151,7 @@ public class Magazines {
                 .withCapacity(75)
                 .withCompatibleBullet(Bullets.Bullet762x39)
                 .withName("AK75Mag")
-                .withRotationPoint(-0.12000000357627871, 0.28000000834465033, -1.8800000560283665)
+                .withPivotPoint(-0.12000000357627871F, 0.28000000834465033F, -1.8800000560283665F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.Mag75rnd(), "gun.png")
@@ -1178,7 +1178,7 @@ public class Magazines {
                 .withCapacity(100)
                 .withCompatibleBullet(Bullets.Bullet762x39)
                 .withName("AK100Mag")
-                .withRotationPoint(-0.12000000357627871, 0.28000000834465033, -1.8800000560283665)
+                .withPivotPoint(-0.12000000357627871F, 0.28000000834465033F, -1.8800000560283665F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.AKDrum100(), "gun.png")
@@ -1206,7 +1206,7 @@ public class Magazines {
                 .withCapacity(10)
                 .withCompatibleBullet(Bullets.Bullet762x54)
                 .withName("DragunovMag")
-                .withRotationPoint(-0.12000000357627871, 0.28000000834465033, -1.880000056028367)
+                .withPivotPoint(-0.12000000357627871F, 0.28000000834465033F, -1.880000056028367F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.DragunovMag(), "dragunov.png")
@@ -1261,7 +1261,7 @@ public class Magazines {
                 .withCapacity(5)
                 .withCompatibleBullet(Bullets.Shotgun12Guage)
                 .withName("Origin12Mag")
-                .withRotationPoint(-0.12000000357627871, 1.0000000298023226, -1.9200000572204607)
+                .withPivotPoint(-0.12000000357627871F, 1.0000000298023226F, -1.9200000572204607F)
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.Origin12Mag(), "Origin12.png")
 
@@ -1288,7 +1288,7 @@ public class Magazines {
                 .withCapacity(20)
                 .withCompatibleBullet(Bullets.Shotgun12Guage)
                 .withName("Origin12DrumMag")
-                .withRotationPoint(-0.12000000357627871, 1.0000000298023226, -1.9200000572204607)
+                .withPivotPoint(-0.12000000357627871F, 1.0000000298023226F, -1.9200000572204607F)
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.Origin12DrumMag(), "Origin12DrumMag.png")
 
@@ -1315,7 +1315,7 @@ public class Magazines {
                 .withCapacity(15)
                 .withCompatibleBullet(Bullets.Bullet9x19mm)
                 .withName("M9Mag_2")
-                .withRotationPoint(-0.16000000476837162, 0.5600000166893007, 0.040000001192092904)
+                .withPivotPoint(-0.16000000476837162F, 0.5600000166893007F, 0.040000001192092904F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.M9A1mag(), "m9a1.png")
@@ -1343,7 +1343,7 @@ public class Magazines {
                 .withCapacity(20)
                 .withCompatibleBullet(Bullets.Bullet57x28mm)
                 .withName("FiveSevenMag")
-                .withRotationPoint(-0.16000000476837162, 0.5600000166893007, 0.040000001192092904)
+                .withPivotPoint(-0.16000000476837162F, 0.5600000166893007F, 0.040000001192092904F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.FiveSevenMagazine(), "fiveseven.png")
@@ -1394,7 +1394,7 @@ public class Magazines {
                 .withCapacity(10)
                 .withCompatibleBullet(Bullets.Bullet9x19mm)
                 .withName("sccycpx2mag")
-                .withRotationPoint(-0.16000000476837162, 0.5600000166893007, 0.040000001192092904)
+                .withPivotPoint(-0.16000000476837162F, 0.5600000166893007F, 0.040000001192092904F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.SCCYCPX2Mag(), "sccycpx2.png")
@@ -1422,7 +1422,7 @@ public class Magazines {
                 .withCapacity(15)
                 .withCompatibleBullet(Bullets.Bullet9x19mm)
                 .withName("sccycpx2magext")
-                .withRotationPoint(-0.16000000476837162, 0.5600000166893007, 0.040000001192092904)
+                .withPivotPoint(-0.16000000476837162F, 0.5600000166893007F, 0.040000001192092904F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.SCCYCPX2MagExt(), "sccycpx2.png")
@@ -1450,7 +1450,7 @@ public class Magazines {
                 .withCapacity(7)
                 .withCompatibleBullet(Bullets.Bullet50AE)
                 .withName("DesertEagleMag")
-                .withRotationPoint(-0.16000000476837162, 0.5600000166893007, 0.040000001192092904)
+                .withPivotPoint(-0.16000000476837162F, 0.5600000166893007F, 0.040000001192092904F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.DesertEagleMag(), "deagle.png")
@@ -1527,7 +1527,7 @@ public class Magazines {
                 .withCapacity(18)
                 .withCompatibleBullet(Bullets.Bullet9x19mm)
                 .withName("MP443Mag_2")
-                .withRotationPoint(-0.20000000596046452, 0.48000001430511485, 0.040000001192092904)
+                .withPivotPoint(-0.20000000596046452F, 0.48000001430511485F, 0.040000001192092904F)
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.MP443Magazine(), "MP443.png")
 
@@ -1634,7 +1634,7 @@ public class Magazines {
                 .withCapacity(17)
                 .withCompatibleBullet(Bullets.Bullet9x19mm)
                 .withName("M17Mag")
-                .withRotationPoint(-0.16000000476837162, 0.5600000166893007, 0.040000001192092904)
+                .withPivotPoint(-0.16000000476837162F, 0.5600000166893007F, 0.040000001192092904F)
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.M17Mag(), "m17.png")
                 .withFirstPersonPositioning(() -> {
@@ -1759,7 +1759,7 @@ public class Magazines {
                 .withCapacity(20)
                 .withCompatibleBullet(Bullets.Bullet9x19mm)
                 .withName("APSMag_2")
-                .withRotationPoint(-0.12000000357627871, 0.48000001430511485, 0.0)
+                .withPivotPoint(-0.12000000357627871F, 0.48000001430511485F, 0.0F)
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.APSmag(), "aps.png")
 
@@ -1881,7 +1881,7 @@ public class Magazines {
                 .withCapacity(10)
                 .withCompatibleBullet(Bullets.Bullet50BMG)
                 .withName("M82Mag_2")
-                .withRotationPoint(-0.12000000357627871, 0.40000001192092904, -2.4800000739097605)
+                .withPivotPoint(-0.12000000357627871F, 0.40000001192092904F, -2.4800000739097605F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.M82Mag(), "m82.png")
@@ -1935,7 +1935,7 @@ public class Magazines {
                 .withCapacity(20)
                 .withCompatibleBullet(Bullets.Bullet9x39mm)
                 .withName("KBP9A91Mag_2")
-                .withRotationPoint(-0.12000000357627871, 0.36000001072883614, -1.9600000584125523)
+                .withPivotPoint(-0.12000000357627871F, 0.36000001072883614F, -1.9600000584125523F)
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.KBP9A91Mag(), "kbp9a91.png")
 
@@ -2237,7 +2237,7 @@ public class Magazines {
                 .withCapacity(10)
                 .withCompatibleBullet(Bullets.Bullet762x51)
                 .withName("Z10Mag")
-                .withRotationPoint(-0.1, 0.0, -1.4000000000000001)
+                .withPivotPoint(-0.1F, 0.0F, -1.4000000000000001F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.Z10Mag(), "z10.png")
@@ -2425,7 +2425,7 @@ public class Magazines {
                 .withCapacity(20)
                 .withCompatibleBullet(Bullets.Bullet762x51)
                 .withName("FNFALMag")
-                .withRotationPoint(-0.12000000357627871, -0.6800000202655794, -2.36000007033348)
+                .withPivotPoint(-0.12000000357627871F, -0.6800000202655794F, -2.36000007033348F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.FNFALMag(), "fnfal.png")
@@ -2453,7 +2453,7 @@ public class Magazines {
                 .withCapacity(20)
                 .withCompatibleBullet(Bullets.Bullet762x51)
                 .withName("G3Mag")
-                .withRotationPoint(0.0, -0.6400000190734865, -1.4000000417232517)
+                .withPivotPoint(0.0F, -0.6400000190734865F, -1.4000000417232517F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.G3Mag(), "G3.png")
@@ -2481,7 +2481,7 @@ public class Magazines {
                 .withCapacity(20)
                 .withCompatibleBullet(Bullets.Bullet762x51)
                 .withName("Mk14EBRmag_2")
-                .withRotationPoint(-0.12000000357627871, 0.5600000166893007, -3.000000089406967)
+                .withPivotPoint(-0.12000000357627871F, 0.5600000166893007F, -3.000000089406967F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.Mk14EBRmag(), "m14dmr.png")
@@ -2509,7 +2509,7 @@ public class Magazines {
                 .withCapacity(50)
                 .withCompatibleBullet(Bullets.Bullet762x51)
                 .withName("M14Drum50")
-                .withRotationPoint(-0.12000000357627871, 0.5600000166893007, -3.000000089406967)
+                .withPivotPoint(-0.12000000357627871F, 0.5600000166893007F, -3.000000089406967F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.M14Drum50(), "gun.png")
@@ -2563,7 +2563,7 @@ public class Magazines {
                 .withCapacity(30)
                 .withCompatibleBullet(Bullets.Bullet9x19mm)
                 .withName("MP5A5Mag")
-                .withRotationPoint(0.0, 0.20000000596046452, -1.5600000464916233)
+                .withPivotPoint(0.0F, 0.20000000596046452F, -1.5600000464916233F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.HKMP5Mag(), "mp5.png")
@@ -2591,7 +2591,7 @@ public class Magazines {
                 .withCapacity(50)
                 .withCompatibleBullet(Bullets.Bullet9x19mm)
                 .withName("HK50Drum")
-                .withRotationPoint(0.0, 0.20000000596046452, -1.5600000464916233)
+                .withPivotPoint(0.0F, 0.20000000596046452F, -1.5600000464916233F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.HK50Drum(), "mp5.png")
@@ -2619,7 +2619,7 @@ public class Magazines {
                 .withCapacity(40)
                 .withCompatibleBullet(Bullets.Bullet46x30mm)
                 .withName("MP7Mag")
-                .withRotationPoint(-0.12000000357627871, 0.6400000190734865, -0.08000000238418581)
+                .withPivotPoint(-0.12000000357627871F, 0.6400000190734865F, -0.08000000238418581F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.MP7Mag(), "mp7.png")
@@ -2647,7 +2647,7 @@ public class Magazines {
                 .withCapacity(20)
                 .withCompatibleBullet(Bullets.Bullet46x30mm)
                 .withName("MP7Mag20")
-                .withRotationPoint(-0.12000000357627871, 0.6400000190734865, -0.08000000238418581)
+                .withPivotPoint(-0.12000000357627871F, 0.6400000190734865F, -0.08000000238418581F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.MP7Mag20(), "mp7.png")
@@ -2675,7 +2675,7 @@ public class Magazines {
                 .withCapacity(25)
                 .withCompatibleBullet(Bullets.Bullet45ACP)
                 .withName("UMP45Mag")
-                .withRotationPoint(-0.12000000357627871, 0.32000000953674324, -1.280000038146973)
+                .withPivotPoint(-0.12000000357627871F, 0.32000000953674324F, -1.280000038146973F)
                 .withRequiredAttachments(Attachments.UMP45Receiver)
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new UMP45mag(), "ump45.png")
@@ -2703,7 +2703,7 @@ public class Magazines {
                 .withCapacity(30)
                 .withCompatibleBullet(Bullets.Bullet9x19mm)
                 .withName("UMP9Mag")
-                .withRotationPoint(-0.12000000357627871, 0.32000000953674324, -1.280000038146973)
+                .withPivotPoint(-0.12000000357627871F, 0.32000000953674324F, -1.280000038146973F)
                 .withRequiredAttachments(Attachments.UMP9Receiver)
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new UMP9Mag(), "ump45.png")
@@ -2731,7 +2731,7 @@ public class Magazines {
                 .withCapacity(30)
                 .withCompatibleBullet(Bullets.Bullet9x19mm)
                 .withName("MPXMag")
-                .withRotationPoint(-0.040000001192092904, 0.44000001311302195, -1.24000003695488)
+                .withPivotPoint(-0.040000001192092904F, 0.44000001311302195F, -1.24000003695488F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.MPXMag(), "mpx.png")
@@ -2787,7 +2787,7 @@ public class Magazines {
                 .withCapacity(30)
                 .withCompatibleBullet(Bullets.Bullet9x19mm)
                 .withName("ScorpionMag")
-                .withRotationPoint(-0.12000000357627871, 1.0000000298023226, -1.680000050067902)
+                .withPivotPoint(-0.12000000357627871F, 1.0000000298023226F, -1.680000050067902F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.ScorpionEVO3A1Magazine(), "scorpionevo3a1.png")
@@ -2815,7 +2815,7 @@ public class Magazines {
                 .withCapacity(50)
                 .withCompatibleBullet(Bullets.Bullet57x28mm)
                 .withName("P90Mag")
-                .withRotationPoint(-0.12000000357627871, -1.1200000333786013, 1.8400000548362736)
+                .withPivotPoint(-0.12000000357627871F, -1.1200000333786013F, 1.8400000548362736F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.P90Mag(), "p90.png")
@@ -2870,7 +2870,7 @@ public class Magazines {
                 .withCapacity(30)
                 .withCompatibleBullet(Bullets.Bullet45ACP)
                 .withName("MAC10Mag")
-                .withRotationPoint(0.08000000238418581, 0.5200000154972078, -0.5600000166893007)
+                .withPivotPoint(0.08000000238418581F, 0.5200000154972078F, -0.5600000166893007F)
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.MAC10Mag(), "mac10.png")
                 .withFirstPersonPositioning(() -> {
@@ -2895,7 +2895,7 @@ public class Magazines {
         Magazines.G11Mag = new ItemMagazine.Builder().withCapacity(50)
                 .withCompatibleBullet(Bullets.Bullet473x33mm)
                 .withName("G11Mag")
-                .withRotationPoint(-0.12000000357627871, -1.5200000452995304, -3.8800001156330115)
+                .withPivotPoint(-0.12000000357627871F, -1.5200000452995304F, -3.8800001156330115F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.G11Mag(), "gun.png")
@@ -2925,7 +2925,7 @@ public class Magazines {
                 .withCapacity(20)
                 .withCompatibleBullet(Bullets.Bullet762x51)
                 .withName("ScarHMag_2")
-                .withRotationPoint(-0.16000000476837162, -0.16000000476837162, -1.5200000452995304)
+                .withPivotPoint(-0.16000000476837162F, -0.16000000476837162F, -1.5200000452995304F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.ScarHMag(), "scarh.png")
@@ -2953,7 +2953,7 @@ public class Magazines {
                 .withCapacity(40)
                 .withCompatibleBullet(Bullets.Bullet762x51)
                 .withName("Scar40Mag")
-                .withRotationPoint(-0.16000000476837162, -0.16000000476837162, -1.5200000452995304)
+                .withPivotPoint(-0.16000000476837162F, -0.16000000476837162F, -1.5200000452995304F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.Scar40Mag(), "gun.png")
@@ -2981,7 +2981,7 @@ public class Magazines {
                 .withCapacity(60)
                 .withCompatibleBullet(Bullets.Bullet762x51)
                 .withName("Scar60Mag")
-                .withRotationPoint(-0.16000000476837162, -0.16000000476837162, -1.5200000452995304)
+                .withPivotPoint(-0.16000000476837162F, -0.16000000476837162F, -1.5200000452995304F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.Stanag50(), "gun.png")
@@ -3009,7 +3009,7 @@ public class Magazines {
                 .withCapacity(10)
                 .withCompatibleBullet(Bullets.Bullet9x39mm)
                 .withName("VSSVintorezMag_2")
-                .withRotationPoint(-0.040000001192092904, -0.28000000834465033, -1.3600000405311587)
+                .withPivotPoint(-0.040000001192092904F, -0.28000000834465033F, -1.3600000405311587F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.VSSVintorezMag(), "vssvintorez.png")
@@ -3037,7 +3037,7 @@ public class Magazines {
                 .withCapacity(20)
                 .withCompatibleBullet(Bullets.Bullet9x39mm)
                 .withName("ASValMag")
-                .withRotationPoint(-0.040000001192092904, -0.28000000834465033, -1.3600000405311587)
+                .withPivotPoint(-0.040000001192092904F, -0.28000000834465033F, -1.3600000405311587F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.ASValMag(), "vssvintorez.png")
@@ -3143,7 +3143,7 @@ public class Magazines {
                 .withCapacity(32)
                 .withCompatibleBullet(Bullets.Bullet9x19mm)
                 .withName("UziMag_2")
-                .withRotationPoint(-0.040000001192092904, 0.7200000214576723, -0.40000001192092904)
+                .withPivotPoint(-0.040000001192092904F, 0.7200000214576723F, -0.40000001192092904F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.UziMag(), "gun.png")
@@ -3174,7 +3174,7 @@ public class Magazines {
                 .withCapacity(18)
                 .withCompatibleBullet(Bullets.Bullet9x19mm)
                 .withName("VP70mag_2")
-                .withRotationPoint(-0.12000000357627871, 0.24000000715255743, 0.08000000238418581)
+                .withPivotPoint(-0.12000000357627871F, 0.24000000715255743F, 0.08000000238418581F)
 
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
                 .withModel(new com.paneedah.mwc.models.VP70mag(), "gun.png")

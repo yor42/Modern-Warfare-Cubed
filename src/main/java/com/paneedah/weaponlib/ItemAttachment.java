@@ -4,13 +4,13 @@ import com.paneedah.weaponlib.crafting.CraftingEntry;
 import com.paneedah.weaponlib.crafting.CraftingGroup;
 import com.paneedah.weaponlib.crafting.IModernCraftingRecipe;
 import com.paneedah.weaponlib.melee.PlayerMeleeInstance;
+import dev.redstudio.redcore.math.vectors.Vector3F;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
@@ -50,7 +50,7 @@ public class ItemAttachment<T> extends Item implements ModelSource, IModernCraft
 
     protected String textureName;
 
-    public Vec3d rotationPoint = Vec3d.ZERO;
+    public Vector3F pivotPoint = new Vector3F();
 
 
     public interface ApplyHandler<T> {

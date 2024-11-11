@@ -8,7 +8,7 @@ import com.paneedah.weaponlib.RenderContext;
 import com.paneedah.weaponlib.RenderableState;
 import com.paneedah.weaponlib.UniversalSoundLookup;
 import com.paneedah.weaponlib.animation.MatrixHelper;
-import com.paneedah.weaponlib.animation.Transform;
+import com.paneedah.mwc.rendering.Transform;
 import com.paneedah.weaponlib.animation.Transition;
 import com.paneedah.weaponlib.render.bgl.math.AngleKit.EulerAngle;
 import com.paneedah.weaponlib.render.bgl.math.AngleKit.Format;
@@ -21,6 +21,8 @@ import org.lwjgl.opengl.GL11;
 
 import java.util.*;
 import java.util.Map.Entry;
+
+import static com.paneedah.mwc.ProjectConstants.LOGGER;
 
 public class AnimationData {
 
@@ -383,7 +385,7 @@ public class AnimationData {
         } else {
 
             for (int i = 0; i < this.fakeTransitions; ++i) {
-                transitionList.add(new Transition<>(normal.getAsPosition()
+                transitionList.add(new Transition<>((renderContext) -> normal.applyTransformations()
                         , this.fTLength));
             }
         }
@@ -392,7 +394,7 @@ public class AnimationData {
         // Swaps the last frame of the animation with
         // the initial position (much smoother lol)
         long curLength = transitionList.get(transitionList.size() - 1).getDuration();
-        transitionList.set(transitionList.size() - 1, new Transition<>(normal.getAsPosition(), curLength));
+        transitionList.set(transitionList.size() - 1, new Transition<>((renderContext) -> normal.applyTransformations(), curLength));
         return transitionList;
     }
 
@@ -414,7 +416,7 @@ public class AnimationData {
             			.withScale(3, 3, 3)
             			.withPosition(-0.3f, 4.75f, -2f)
             			.withRotation(-10, 0, 0)
-            			.getAsPosition(), 10)
+            			.applyTransformations(), 10)
             			);
             			*/
 
@@ -432,7 +434,7 @@ public class AnimationData {
         } else {
 
             for (int i = 0; i < this.fakeTransitions; ++i) {
-                transitionList.add(new Transition<>(initial.getAsPosition()
+                transitionList.add(new Transition<>((renderContext) -> initial.applyTransformations()
                         , this.fTLength));
             }
         }
@@ -442,7 +444,7 @@ public class AnimationData {
         // the initial position (much smoother lol)
         if (applySwap) {
             long curLength = transitionList.get(transitionList.size() - 1).getDuration();
-            transitionList.set(transitionList.size() - 1, new Transition<>(initial.getAsPosition(), curLength));
+            transitionList.set(transitionList.size() - 1, new Transition<>((renderContext) -> initial.applyTransformations(), curLength));
         }
 
 
@@ -510,7 +512,6 @@ public class AnimationData {
                  * it doesn't even seem like the problem.
                  */
 
-
                 double rotXMult = 1.0;
                 double rotYMult = 1.0;
                 double rotZMult = 1.0;
@@ -535,28 +536,26 @@ public class AnimationData {
                 double mul = 1 / tesla;
 
                 // Original object positioning
-                GlStateManager.translate(normal.getPositionX(), normal.getPositionY(), normal.getPositionZ());
+                GlStateManager.translate(normal.position.x, normal.position.y, normal.position.z);
 
                 // Animation translation
                 GL11.glTranslated(translation.x * mul, -translation.y * mul, translation.z * mul);
 
                 // Offset rotation point
-                GlStateManager.translate(normal.getRotationPointX(), normal.getRotationPointY(), normal.getRotationPointZ());
+                GlStateManager.translate(normal.pivotPoint.x, normal.pivotPoint.y, normal.pivotPoint.z);
 
                 // Original object rotation (+Z, -Y, -X)
-                GL11.glRotated(normal.getRotationZ(), 0, 0, 1);
+                GL11.glRotated(normal.rotation.z, 0, 0, 1);
                 GL11.glRotated(rotation.z * rotZMult, 0, 0, 1);
 
-                GL11.glRotated(normal.getRotationY(), 0, 1, 0);
+                GL11.glRotated(normal.rotation.y, 0, 1, 0);
                 GL11.glRotated(rotation.y * rotYMult, 0, 1, 0);
 
-                GL11.glRotated(normal.getRotationX(), 1, 0, 0);
+                GL11.glRotated(normal.rotation.x, 1, 0, 0);
                 GL11.glRotated(rotation.x * rotXMult, 1, 0, 0);
 
-                GlStateManager.translate(-normal.getRotationPointX(), -normal.getRotationPointY(), -normal.getRotationPointZ());
-                GlStateManager.scale(normal.getScaleX(), normal.getScaleY(), normal.getScaleZ());
-
-
+                GlStateManager.translate(-normal.pivotPoint.x, -normal.pivotPoint.y, -normal.pivotPoint.z);
+                GlStateManager.scale(normal.scale.x, normal.scale.y, normal.scale.z);
             }, (int) timestamp);
             //	System.out.println("Hello?! Brother! " + soundEvent);
             trans.setSoundEvent(soundEvent);
@@ -568,7 +567,6 @@ public class AnimationData {
 
         public Transition<?> createVMWTransition(Transform t, double divisor) {
             Transition<?> trans = new Transition<>((rc) -> {
-
 
                 /*
                  * So you wanna mess with this code?
@@ -613,23 +611,22 @@ public class AnimationData {
                 //if(divisor == 5) mul = 0.0000000;
 
                 // Original object positioning
-                GlStateManager.translate(t.getPositionX(), t.getPositionY(), t.getPositionZ());
+                GlStateManager.translate(t.position.x, t.position.y, t.position.z);
 
                 // Animation translation
                 GL11.glTranslated(translation.x * mul, -translation.y * mul, translation.z * mul);
 
                 // Offset rotation point
-                GlStateManager.translate(t.getRotationPointX(), t.getRotationPointY(), t.getRotationPointZ());
-
+                GlStateManager.translate(t.pivotPoint.x, t.pivotPoint.y, t.pivotPoint.z);
 
                 // Original object rotation (+Z, -Y, -X)
-                GL11.glRotated(t.getRotationZ(), 0, 0, 1);
+                GL11.glRotated(t.rotation.z, 0, 0, 1);
                 GL11.glRotated(rotation.z * rotZMult, 0, 0, 1);
 
-                GL11.glRotated(t.getRotationY(), 0, 1, 0);
+                GL11.glRotated(t.rotation.y, 0, 1, 0);
                 GL11.glRotated(rotation.y * rotYMult, 0, 1, 0);
 
-                GL11.glRotated(t.getRotationX(), 1, 0, 0);
+                GL11.glRotated(t.rotation.x, 1, 0, 0);
                 GL11.glRotated(rotation.x * rotXMult, 1, 0, 0);
 
 
@@ -637,13 +634,11 @@ public class AnimationData {
 
 
                 // Revert rotation point
-                GlStateManager.translate(-t.getRotationPointX(), -t.getRotationPointY(), -t.getRotationPointZ());
+                GlStateManager.translate(-t.pivotPoint.x, -t.pivotPoint.y, -t.pivotPoint.z);
 
 
                 // Original object scale
-                GlStateManager.scale(t.getScaleX(), t.getScaleY(), t.getScaleZ());
-
-
+                GlStateManager.scale(t.scale.x, t.scale.y, t.scale.z);
             }, Math.round(timestamp));
 
 

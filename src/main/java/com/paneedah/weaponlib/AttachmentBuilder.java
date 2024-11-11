@@ -4,8 +4,9 @@ import com.paneedah.mwc.renderer.ModelSourceTransforms;
 import com.paneedah.mwc.renderer.StaticModelSourceRenderer;
 import com.paneedah.weaponlib.ItemAttachment.ApplyHandler;
 import com.paneedah.weaponlib.ItemAttachment.ApplyHandler2;
-import com.paneedah.weaponlib.animation.Transform;
+import com.paneedah.mwc.rendering.Transform;
 import com.paneedah.weaponlib.crafting.*;
+import dev.redstudio.redcore.math.vectors.Vector3F;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
@@ -31,12 +32,12 @@ public class AttachmentBuilder<T> {
     protected String textureName;
     protected ModelSourceTransforms transforms = ModelSourceTransforms.builder()
             .entityPositioning(() -> new Transform()
-                    .withScale(0.17, 0.17, 0.17)
-                    .withPosition(-0.5, -0.5, 0.6)
-                    .doGLDirect())
+                    .withScale(0.17F, 0.17F, 0.17F)
+                    .withPosition(-0.5F, -0.5F, 0.6F)
+                    .applyTransformations())
             .build();
 
-    protected Vec3d rotationPoint;
+    protected Vector3F pivotPoint;
 
     protected CreativeTabs tab;
     protected AttachmentCategory attachmentCategory;
@@ -85,8 +86,8 @@ public class AttachmentBuilder<T> {
         return this;
     }
 
-    public AttachmentBuilder<T> withRotationPoint(double x, double y, double z) {
-        this.rotationPoint = new Vec3d(x, y, z);
+    public AttachmentBuilder<T> withPivotPoint(float x, float y, float z) {
+        this.pivotPoint = new Vector3F(x, y, z);
         return this;
     }
 
@@ -251,8 +252,8 @@ public class AttachmentBuilder<T> {
         // Do not register things if they do not have recipes.
         CraftingRegistry.registerHook(attachment);
 
-        if (rotationPoint != null) {
-            attachment.rotationPoint = rotationPoint;
+        if (pivotPoint != null) {
+            attachment.pivotPoint = pivotPoint;
         }
 
         attachment.remove2 = remove2;
