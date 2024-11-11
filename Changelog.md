@@ -103,6 +103,7 @@ like knowing which weapon is better or whether an attachment will be useful to y
 - Updated to [org.jetbrains.gradle.plugin.idea-ext](https://github.com/JetBrains/gradle-idea-ext-plugin) 1.1.9
 - Props now use Red Core `AABBUtil`
 - Updated [Red Core](https://www.curseforge.com/minecraft/mc-mods/red-core) dependency to 0.6-Dev-8
+- Lombokified most of the codebase
 
 ## Modern Warfare Cubed Version 0.1.8 Changelog - 2024-08-16
 
