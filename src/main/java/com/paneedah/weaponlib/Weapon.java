@@ -115,7 +115,7 @@ public class Weapon extends Item implements PlayerItemInstanceFactory<PlayerWeap
         private CreativeTabs creativeTab;
         private WeaponRenderer renderer;
         //float zoom = Weapon.DEFAULT_ZOOM;
-        @Getter List<Integer> maxShots = new ArrayList<>();
+        @Getter List<Integer> maxShots = new ArrayList<>(); // ! TODO: This is despicable
         String crosshair;
         String crosshairRunning;
         String crosshairZoomed;
