@@ -219,7 +219,7 @@ public class Weapon extends Item implements PlayerItemInstanceFactory<PlayerWeap
         private float zoom;
 
 
-        protected Pair<Double, Double> screenShakingParameters = new Pair<Double, Double>(100.0, 1.0);
+        protected Pair<Double, Double> screenShakingParameters = new Pair<Double, Double>(100.0, 1.0); // ! TODO: Make it a dedicated class, this is a pair with two boxed doubles, so three classes in total for what could be one, and it would probably be nicer
 
         private boolean newSys = false;
 
