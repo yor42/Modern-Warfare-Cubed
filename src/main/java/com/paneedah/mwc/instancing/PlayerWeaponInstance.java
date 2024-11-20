@@ -106,7 +106,7 @@ public class PlayerWeaponInstance extends PlayerItemInstance<WeaponState> implem
     @Getter @Setter private long lastFireTimestamp;
     private long aimedChangeTimestamp;
 
-    @Getter @Setter private float zoom = 1;
+    @Getter private float zoom = 1;
     @Getter private float recoil;
 
     @Getter private byte[] selectedAttachmentIndexes = new byte[0];
@@ -134,6 +134,7 @@ public class PlayerWeaponInstance extends PlayerItemInstance<WeaponState> implem
         final PlayerWeaponInstance otherInstance = (PlayerWeaponInstance) otherItemInstance;
 
         setAmmo(otherInstance.ammo);
+        setZoom(otherInstance.zoom);
         setRecoil(otherInstance.recoil);
         setSelectedAttachmentIndexes(otherInstance.selectedAttachmentIndexes);
         setActiveAttachmentIds(otherInstance.activeAttachmentIds);
@@ -441,6 +442,15 @@ public class PlayerWeaponInstance extends PlayerItemInstance<WeaponState> implem
         markDirty();
     }
 
+    public void setZoom(float zoom) {
+        if (this.zoom == zoom || zoom <= 0)
+            return;
+
+        this.zoom = zoom;
+
+        markDirty();
+    }
+
     public void setRecoil(final float recoil) {
         if (this.recoil == recoil)
             return;
@@ -567,6 +577,7 @@ public class PlayerWeaponInstance extends PlayerItemInstance<WeaponState> implem
         ammo = byteBuf.readInt();
 
         recoil = byteBuf.readFloat();
+        zoom = byteBuf.readFloat();
 
         selectedAttachmentIndexes = readByteArray(byteBuf);
 
@@ -589,6 +600,7 @@ public class PlayerWeaponInstance extends PlayerItemInstance<WeaponState> implem
         byteBuf.writeInt(ammo);
 
         byteBuf.writeFloat(recoil);
+        byteBuf.writeFloat(zoom);
 
         writeByteArray(byteBuf, selectedAttachmentIndexes);
 
