@@ -1,5 +1,8 @@
 package com.paneedah.weaponlib;
 
+import com.paneedah.mwc.instancing.PlayerItemInstanceFactory;
+import com.paneedah.mwc.instancing.PlayerWeaponInstance;
+import com.paneedah.mwc.instancing.Tags;
 import com.paneedah.mwc.network.messages.BlockHitMessage;
 import com.paneedah.weaponlib.animation.ScreenShakeAnimation;
 import com.paneedah.weaponlib.animation.ScreenShakingAnimationManager;
@@ -1305,7 +1308,7 @@ public class Weapon extends Item implements PlayerItemInstanceFactory<PlayerWeap
         if (flagIn.isAdvanced() && playerWeaponInstance != null && itemStack.getTagCompound() != null) {
             if (Keyboard.isKeyDown(Keyboard.KEY_LCONTROL)) {
                 tooltipLines.add(red + "Logging NBT data, release left control to stop");
-                LOGGER.info("{} NBT Data (Size {}): {}", playerWeaponInstance.toString(), itemStack.getTagCompound().getSize(), itemStack.getTagCompound().toString());
+                Tags.printTags(itemStack);
             } else {
                 tooltipLines.add(yellow + "Press left control to log NBT data");
             }
@@ -1345,20 +1348,21 @@ public class Weapon extends Item implements PlayerItemInstanceFactory<PlayerWeap
     }
 
     @Override
-    public PlayerWeaponInstance createItemInstance(EntityLivingBase player, ItemStack itemStack, int slot) {
-        PlayerWeaponInstance instance = new PlayerWeaponInstance(slot, player, itemStack);
-        //state.setAmmo(Tags.getAmmo(itemStack)); // TODO: get ammo properly
+    public PlayerWeaponInstance createItemInstance(final EntityLivingBase entityLivingBase, final ItemStack itemStack, final int slot) {
+        final PlayerWeaponInstance instance = new PlayerWeaponInstance(slot, entityLivingBase, itemStack);
+
+//        instance.setAmmo(Tags.getAmmo(itemStack)); // TODO: Get ammo properly
         instance.setState(WeaponState.READY);
 
         instance.setRecoil(BalancePackManager.shouldChangeWeaponRecoil(instance.getWeapon()) ? (float) BalancePackManager.getNewWeaponRecoil(instance.getWeapon()) : builder.recoil);
         instance.setMaxShots(builder.maxShots.get(0));
 
         for (CompatibleAttachment<Weapon> compatibleAttachment : ((Weapon) itemStack.getItem()).getCompatibleAttachments().values()) {
-            ItemAttachment<Weapon> attachment = compatibleAttachment.getAttachment();
-            if (compatibleAttachment.isDefault() && attachment.getApply2() != null) {
+            final ItemAttachment<Weapon> attachment = compatibleAttachment.getAttachment();
+            if (compatibleAttachment.isDefault() && attachment.getApply2() != null)
                 attachment.apply2.apply(attachment, instance);
-            }
         }
+
         return instance;
     }
 
@@ -1463,7 +1467,7 @@ public class Weapon extends Item implements PlayerItemInstanceFactory<PlayerWeap
     }
 
     void incrementZoom(PlayerWeaponInstance instance) {
-        Item scopeItem = instance.getAttachmentItemWithCategory(AttachmentCategory.SCOPE);
+        Item scopeItem = instance.getAttachmentItemByCategory(AttachmentCategory.SCOPE);
         if (scopeItem instanceof ItemScope && ((ItemScope) scopeItem).isOptical()) {
             float minZoom = ((ItemScope) scopeItem).getMinZoom();
             float maxZoom = ((ItemScope) scopeItem).getMaxZoom();
@@ -1492,7 +1496,7 @@ public class Weapon extends Item implements PlayerItemInstanceFactory<PlayerWeap
     }
 
     void decrementZoom(PlayerWeaponInstance instance) {
-        Item scopeItem = instance.getAttachmentItemWithCategory(AttachmentCategory.SCOPE);
+        Item scopeItem = instance.getAttachmentItemByCategory(AttachmentCategory.SCOPE);
         if (scopeItem instanceof ItemScope && ((ItemScope) scopeItem).isOptical()) {
             float minZoom = ((ItemScope) scopeItem).getMinZoom();
             float maxZoom = ((ItemScope) scopeItem).getMaxZoom();

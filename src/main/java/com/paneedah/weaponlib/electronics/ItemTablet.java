@@ -1,5 +1,7 @@
 package com.paneedah.weaponlib.electronics;
 
+import com.paneedah.mwc.instancing.PlayerItemInstanceFactory;
+import com.paneedah.mwc.instancing.PlayerTabletInstance;
 import com.paneedah.mwc.renderer.ModelSourceTransforms;
 import com.paneedah.weaponlib.*;
 import com.paneedah.mwc.rendering.Transform;
@@ -74,9 +76,11 @@ public class ItemTablet<T> extends ItemAttachment<T> implements PlayerItemInstan
     }
 
     @Override
-    public PlayerTabletInstance createItemInstance(EntityLivingBase player, ItemStack stack, int slot) {
-        PlayerTabletInstance instance = new PlayerTabletInstance(slot, player, stack);
+    public PlayerTabletInstance createItemInstance(final EntityLivingBase entityLivingBase, final ItemStack itemStack, final int slot) {
+        final PlayerTabletInstance instance = new PlayerTabletInstance(slot, entityLivingBase, itemStack);
+
         instance.setState(TabletState.READY);
+
         return instance;
     }
 }

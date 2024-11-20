@@ -7,7 +7,13 @@ and this project follows the [Ragnarök Versioning Convention](https://github.co
 
 ## [UNRELEASED] Modern Warfare Cubed Version 0.2 Changelog
 
+### Warning
+
 [**MWC 0.1 NOW REQUIRES RED CORE 0.6 AND ABOVE**](https://www.curseforge.com/minecraft/mc-mods/red-core/files/all)
+
+**BEFORE UPDATING TO MWC 0.1 MAKE SURE TO BACKUP YOUR WORLDS, THINGS WILL DISAPPEAR**
+
+**ALL ATTACHMENTS, MODIFICATIONS AND SKINS CURRENTLY ON A WEAPON WILL DISAPPEAR**
 
 ### Highlight
 
@@ -51,6 +57,7 @@ like knowing which weapon is better or whether an attachment will be useful to y
 - Added tooltips to melee weapons
 - Added tooltips to attachments
 - Added new `enableStatusMessages` config
+- Added player item instance registry itemstack instance cache size to the F3 debug
 
 ### Changed
 
@@ -73,6 +80,7 @@ like knowing which weapon is better or whether an attachment will be useful to y
 - Overhauled the textures and models of:
   - EOTech 512 A65 Holographic (Black)
   - EOTech EXPS3-0 Holographic (Tan)
+- Changed how fast weapon states expire which should improve how weapons feel in certain conditions 
 
 ### Fixed
 
@@ -86,12 +94,18 @@ like knowing which weapon is better or whether an attachment will be useful to y
   - revolver_load_complete
   - m40a6_boltaction
   - m200_intervention_boltaction
+- Fixed somewhat of a race condition in the management of the state history (used for rendering)
 
 ### Removed
 
 - Removed unused warning about the grenade exploding in X amount of seconds
 - Removed proning
 - Removed unused `ItemAmmo`
+
+### Optimization
+
+- Clear player item instance registry after rendering every weapon once on first world load and when leaving a world
+- Invalidate player item instance registry itemstack instance cache after rendering every weapon once on first world load
 
 ### Internal
 

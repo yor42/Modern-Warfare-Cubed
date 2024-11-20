@@ -1,5 +1,7 @@
 package com.paneedah.weaponlib.electronics;
 
+import com.paneedah.mwc.instancing.PlayerHandheldInstance;
+import com.paneedah.mwc.instancing.PlayerItemInstanceFactory;
 import com.paneedah.weaponlib.*;
 import com.paneedah.weaponlib.perspective.Perspective;
 import com.paneedah.weaponlib.perspective.PerspectiveRenderer;
@@ -61,9 +63,11 @@ public class ItemHandheld<T> extends ItemAttachment<T>
     }
 
     @Override
-    public PlayerHandheldInstance createItemInstance(EntityLivingBase player, ItemStack stack, int slot) {
-        PlayerHandheldInstance instance = new PlayerHandheldInstance(slot, player, stack);
+    public PlayerHandheldInstance createItemInstance(final EntityLivingBase entityLivingBase, final ItemStack itemStack, final int slot) {
+        final PlayerHandheldInstance instance = new PlayerHandheldInstance(slot, entityLivingBase, itemStack);
+
         instance.setState(HandheldState.READY);
+
         return instance;
     }
 
