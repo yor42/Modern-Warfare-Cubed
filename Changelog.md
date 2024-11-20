@@ -118,13 +118,13 @@ like knowing which weapon is better or whether an attachment will be useful to y
 - Updated the `gradle.properties` to the new Red Studio standard one
 - Cleaned up the buildscript
 - Updated [GroovyScript](https://www.curseforge.com/minecraft/mc-mods/groovyscript) dependency to 1.2
-- Updated to [gradle-buildconfig-plugin](https://github.com/gmazzo/gradle-buildconfig-plugin) 5.5.0
+- Updated to [gradle-buildconfig-plugin](https://github.com/gmazzo/gradle-buildconfig-plugin) 5.5.1
 - Switched to the new standard `gradle.properties`
 - General cleanup
-- Updated to [io.freefair.lombok](https://plugins.gradle.org/plugin/io.freefair.lombok) 8.7.1
+- Updated to [io.freefair.lombok](https://plugins.gradle.org/plugin/io.freefair.lombok) 8.11
 - Remade the build script
 - Switched from [RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) tags to [gradle-buildconfig-plugin](https://github.com/gmazzo/gradle-buildconfig-plugin)
-- Updated [MixinBooter](https://www.curseforge.com/minecraft/mc-mods/mixin-booter) dependency to 10.1
+- Updated [MixinBooter](https://www.curseforge.com/minecraft/mc-mods/mixin-booter) dependency to 10.2
 - Updated to [org.jetbrains.gradle.plugin.idea-ext](https://github.com/JetBrains/gradle-idea-ext-plugin) 1.1.9
 - Props now use Red Core `AABBUtil`
 - Updated [Red Core](https://www.curseforge.com/minecraft/mc-mods/red-core) dependency to 0.6-Dev-8
