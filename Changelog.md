@@ -130,6 +130,21 @@ like knowing which weapon is better or whether an attachment will be useful to y
 - Updated [Red Core](https://www.curseforge.com/minecraft/mc-mods/red-core) dependency to 0.6-Dev-8
 - Lombokified most of the codebase
 
+## Modern Warfare Cubed Version 0.1.9 Changelog - 2024-11-25
+
+### Warning
+
+[**MWC 0.1 NOW REQUIRES RED CORE 0.5.1 AND ABOVE**](https://www.curseforge.com/minecraft/mc-mods/red-core/files/all)
+
+[**MWC 0.1 NOW REQUIRES MIXINBOOTER**](https://www.curseforge.com/minecraft/mc-mods/mixin-booter/files/all)
+
+**BEFORE UPDATING TO MWC 0.1 MAKE SURE TO BACKUP YOUR WORLDS, THINGS WILL DISAPPEAR**
+
+### Fixed
+
+- Fixed accidental use of `akka.japi.Predicate` instead `java.util.function.Predicate`
+- Fixed ammunition press using `null` instead of `ItemStack#EMPTY`
+
 ## Modern Warfare Cubed Version 0.1.8 Changelog - 2024-08-16
 
 ### Warning
