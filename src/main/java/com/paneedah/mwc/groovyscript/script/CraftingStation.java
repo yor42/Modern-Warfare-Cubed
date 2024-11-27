@@ -14,6 +14,7 @@ import com.paneedah.weaponlib.crafting.IModernCraftingRecipe;
 import net.minecraft.item.ItemStack;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Predicate;
@@ -61,6 +62,9 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
      */
     @MethodDescription(example = @Example("'ATTACHMENT_NORMAL'"), priority = 3000)
     public void removeAllinGroup(String group) {
+        if (Arrays.stream(CraftingGroup.values()).noneMatch(g -> g.name().equals(group))) {
+            return;
+        }
         removeAllinGroup(CraftingGroup.valueOf(group));
     }
 
@@ -117,6 +121,9 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
      */
     @MethodDescription(example = @Example("ore('oreDiamond'), 'ATTACHMENT_NORMAL'"))
     public void removeInGroup(IIngredient ingredient, String group) {
+        if (Arrays.stream(CraftingGroup.values()).noneMatch(g -> g.name().equals(group))) {
+            return;
+        }
         removeInGroup(ingredient, CraftingGroup.valueOf(group));
     }
 
@@ -273,6 +280,9 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
          */
         @RecipeBuilderMethodDescription(field = "group", priority = 2000)
         public RecipeBuilder setGroup(String group) {
+            if (Arrays.stream(CraftingGroup.values()).noneMatch(g -> g.name().equals(group))) {
+                return this;
+            }
             return setGroup(CraftingGroup.valueOf(group));
         }
 
