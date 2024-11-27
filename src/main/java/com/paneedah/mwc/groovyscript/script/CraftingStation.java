@@ -228,16 +228,16 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
             // max input == container size of crafting station.
             this.validateItems(msg, 1, 27, 1, 1);
             msg.add(this.group == null, "group must not be null!");
-            msg.add(validateYields(), "yields can not be less than 0!");
+            msg.add(!validateYields(), "yields can not be less than 0!");
         }
 
         private boolean validateYields() {
             for (double value : this.yields) {
                 if (value < 0) {
-                    return true;
+                    return false;
                 }
             }
-            return false;
+            return this.yields.size() == this.input.size();
         }
 
         private final ArrayList<Double> yields = new ArrayList<>();
