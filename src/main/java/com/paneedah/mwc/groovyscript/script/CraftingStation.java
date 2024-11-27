@@ -239,6 +239,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
             msg.add(this.input.isEmpty(), "Size of the input should be greater than 0, yet it was 0.");
         }
 
+        @Property(defaultValue = "GUN", comp = @Comp(not = "null"))
         private CraftingGroup group = GUN;
         private final List<CraftingEntry> input = new ArrayList<>();
 

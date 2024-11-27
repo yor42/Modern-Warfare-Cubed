@@ -1177,4 +1177,4 @@ groovyscript.wiki.mwc.crafting_station.removeMagazineByOutput=Removes recipe tha
 
 groovyscript.wiki.mwc.crafting_station.yield.value=Recover ratio of ingredient when dismantling item
 groovyscript.wiki.mwc.crafting_station.group.value=Category of crafting recipe
-groovyscript.wiki.mwc.crafting_station.input.value=Input entries of the recipe, `double` is refund yield of the ingredient.
+groovyscript.wiki.mwc.crafting_station.input.value=Input entries of the recipe, `double` is refund yield of the ingredient,
