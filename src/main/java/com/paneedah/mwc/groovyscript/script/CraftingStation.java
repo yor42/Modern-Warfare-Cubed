@@ -14,6 +14,8 @@ import com.paneedah.weaponlib.crafting.IModernCraftingRecipe;
 import net.minecraft.item.ItemStack;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.function.Predicate;
 
 import static com.paneedah.mwc.ProjectConstants.NAME;
@@ -35,10 +37,8 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
      */
     @MethodDescription(priority = 4000)
     public void removeAll() {
-        for (ArrayList<IModernCraftingRecipe> list : craftingMap.values()) {
-            for (IModernCraftingRecipe recipe : list) {
-                this.removeRecipe(recipe);
-            }
+        for (CraftingGroup list : craftingMap.keySet()) {
+            this.removeInGroupWithFilter(e->true, list);
         }
     }
 
@@ -49,12 +49,8 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
      */
     @MethodDescription(example = @Example("ore('oreDiamond')"), priority = 2000)
     public void remove(IIngredient ingredient) {
-        for (ArrayList<IModernCraftingRecipe> list : craftingMap.values()) {
-            for (IModernCraftingRecipe recipe : list) {
-                if (ingredient.test(recipe.getItemStack())) {
-                    removeRecipe(recipe);
-                }
-            }
+        for (CraftingGroup list : craftingMap.keySet()) {
+            this.removeInGroupWithFilter(ingredient, list);
         }
     }
 
@@ -173,10 +169,14 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
     }
 
     public void removeInGroupWithFilter(Predicate<ItemStack> ingredient, CraftingGroup group) {
+        List<IModernCraftingRecipe> recipesToRemove = new ArrayList<>();
         for (IModernCraftingRecipe recipe : craftingMap.get(group)) {
             if (ingredient.test(recipe.getItemStack())) {
-                removeRecipe(recipe);
+                recipesToRemove.add(recipe);
             }
+        }
+        for (IModernCraftingRecipe recipe : recipesToRemove) {
+            removeRecipe(recipe);
         }
     }
 
