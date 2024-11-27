@@ -1156,3 +1156,22 @@ overlay.opendoor.name=Open Door
 
 death.attack.gun=%s was shot by %s using %s
 death.attack.gun.noshooter=%s was shot to death using %s
+
+groovyscript.wiki.mwc.crafting_station.title=Crafting Station/Ammo Press
+groovyscript.wiki.mwc.crafting_station.description=Converts multiple items into another item, with a way to recover some of original resources when dismantled
+groovyscript.wiki.mwc.crafting_station.remove=Removes Recipe that outputs given `ingredient` from all category
+groovyscript.wiki.mwc.crafting_station.removeAllinGroup=Removes ALL recipes of given category. valid categories = "GUN", "ATTACHMENT_NORMAL", "ATTACHMENT_MODIFICATION", "BULLET", "MAGAZINE"
+groovyscript.wiki.mwc.crafting_station.removeAllGun=Remove ALL recipes of Gun Category
+groovyscript.wiki.mwc.crafting_station.removeAllNormalAttachment=Remove ALL recipes of Normal Attachment Category
+groovyscript.wiki.mwc.crafting_station.removeAllModificationAttachment=Remove ALL recipes of Modification Attachment Category
+groovyscript.wiki.mwc.crafting_station.removeAllBullet=Remove ALL recipes of Bullet Category
+groovyscript.wiki.mwc.crafting_station.removeAllMagazine=Remove ALL recipes of Magazine Category
+groovyscript.wiki.mwc.crafting_station.removeInGroup=Removes Recipe that outputs given `ingredient` from given category. valid categories = "GUN", "ATTACHMENT_NORMAL", "ATTACHMENT_MODIFICATION", "BULLET", "MAGAZINE"
+groovyscript.wiki.mwc.crafting_station.removeGun=Removes recipe that outputs matching item of given `ingredient` from gun category
+groovyscript.wiki.mwc.crafting_station.removeNormalAttachment=Removes recipe that outputs matching item of given `ingredient` from normal attachment category
+groovyscript.wiki.mwc.crafting_station.removeModificationAttachment=Removes recipe that outputs matching item of given `ingredient` from modification attachment category
+groovyscript.wiki.mwc.crafting_station.removeBullet=Removes recipe that outputs matching item of given `ingredient` from bullet category
+groovyscript.wiki.mwc.crafting_station.removeMagazine=Removes recipe that outputs matching item of given `ingredient` from magazine category
+
+groovyscript.wiki.mwc.crafting_station.yield.value=Recover ratio of ingredient when dismantling item
+groovyscript.wiki.mwc.crafting_station.group.value=Category of crafting recipe

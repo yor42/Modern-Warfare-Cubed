@@ -2,6 +2,7 @@ package com.paneedah.mwc.groovyscript;
 
 import com.cleanroommc.groovyscript.api.GroovyPlugin;
 import com.cleanroommc.groovyscript.compat.mods.GroovyContainer;
+import com.cleanroommc.groovyscript.documentation.linkgenerator.LinkGeneratorHooks;
 import com.paneedah.mwc.groovyscript.script.CraftingStation;
 
 import static com.paneedah.mwc.ProjectConstants.ID;
@@ -24,5 +25,6 @@ public class MWCGroovyPlugin implements GroovyPlugin {
     @Override
     public void onCompatLoaded(GroovyContainer<?> groovyContainer) {
         groovyContainer.addProperty(craftingStation);
+        LinkGeneratorHooks.registerLinkGenerator(new MWCLinkGenerator());
     }
 }
