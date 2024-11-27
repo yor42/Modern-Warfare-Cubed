@@ -14,7 +14,6 @@ import com.paneedah.weaponlib.crafting.IModernCraftingRecipe;
 import net.minecraft.item.ItemStack;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -65,7 +64,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
      * @param group CraftingGroup to remove all recipes inside. valid values = "GUN", "ATTACHMENT_NORMAL", "ATTACHMENT_MODIFICATION", "BULLET", "MAGAZINE"
      */
     @MethodDescription(priority = 3000)
-    public void removeAllinGroup(CraftingGroup group) {
+    public void removeAllInGroup(CraftingGroup group) {
         removeInGroupWithFilter((s) -> true, group);
     }
 
@@ -74,7 +73,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
      */
     @MethodDescription()
     public void removeAllGun() {
-        removeAllinGroup(GUN);
+        removeAllInGroup(GUN);
     }
 
     /**
@@ -82,7 +81,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
      */
     @MethodDescription()
     public void removeAllNormalAttachment() {
-        removeAllinGroup(ATTACHMENT_NORMAL);
+        removeAllInGroup(ATTACHMENT_NORMAL);
     }
 
     /**
@@ -90,7 +89,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
      */
     @MethodDescription()
     public void removeAllModificationAttachment() {
-        removeAllinGroup(ATTACHMENT_MODIFICATION);
+        removeAllInGroup(ATTACHMENT_MODIFICATION);
     }
 
     /**
@@ -98,7 +97,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
      */
     @MethodDescription()
     public void removeAllBullet() {
-        removeAllinGroup(BULLET);
+        removeAllInGroup(BULLET);
     }
 
     /**
@@ -106,7 +105,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
      */
     @MethodDescription()
     public void removeAllMagazine() {
-        removeAllinGroup(MAGAZINE);
+        removeAllInGroup(MAGAZINE);
     }
 
     /**
@@ -114,7 +113,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
      */
     @MethodDescription()
     public void removeAllGrenade() {
-        removeAllinGroup(GRENADE);
+        removeAllInGroup(GRENADE);
     }
 
     /**
