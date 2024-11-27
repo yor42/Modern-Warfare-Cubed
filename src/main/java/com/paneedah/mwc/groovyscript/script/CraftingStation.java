@@ -53,7 +53,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
      * @param ingredient Target Ingredient. any recipe with matching output will be removed.
      */
     @MethodDescription(example = @Example("ore('oreDiamond')"), priority = 2000)
-    public void remove(IIngredient ingredient) {
+    public void removeAllCategoryByOutput(IIngredient ingredient) {
         for (CraftingGroup list : craftingMap.keySet()) {
             this.removeInGroupWithFilter(ingredient, list);
         }
@@ -264,6 +264,9 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
          */
         @RecipeBuilderMethodDescription(field = "input")
         public AbstractRecipeBuilder<GSCrafting> input(double yield, IIngredient ingredient) {
+            if (yield < 0) {
+                throw new IllegalArgumentException("Yield cannot be negative, yet we got: " + yield);
+            }
             this.input.add(new CraftingEntry(ingredient.toMcIngredient(), ingredient.getAmount(), yield));
             return this;
         }
