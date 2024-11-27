@@ -221,14 +221,13 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
      * Start Recipe Builder for GroovyScript.
      */
     @RecipeBuilderDescription(example = {
-            @Example(".input(item('minecraft:clay')).output(item('minecraft:diamond'))"),
-            @Example(".setYield(0.5).input(item('minecraft:gold_ingot')).output(item('minecraft:clay') * 2)")
+            @Example(".input(item('minecraft:clay'), 1).output(item('minecraft:diamond'))"),
+            @Example(".input(item('minecraft:gold_ingot'), 0.5).output(item('minecraft:clay') * 2)")
     })
     public RecipeBuilder recipeBuilder() {
         return new RecipeBuilder();
     }
 
-    @Property(property = "yield", comp = @Comp(gte = 0))
     @Property(property = "group", comp = @Comp(not = "null"))
     @Property(property = "input", comp = @Comp(lte = 27))
     @Property(property = "output", comp = @Comp(eq = 1))
@@ -258,9 +257,6 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
 
         private final ArrayList<Double> yields = new ArrayList<>();
 
-        @Property(defaultValue = "1.0", comp = @Comp(gte = 0))
-        private double yield = 1.0;
-
         @Property(defaultValue = "GUN", comp = @Comp(not = "null"))
         private CraftingGroup group = GUN;
 
@@ -272,19 +268,34 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
          */
         @Override
         public AbstractRecipeBuilder<GSCrafting> input(IIngredient ingredient) {
-            this.yields.add(this.yield);
+            return this.input(ingredient, 0);
+        }
+
+        /**
+         * Add Ingredient of recipe With ItemStack
+         *
+         * @param ingredient crafting ingredient
+         * @param yield refund yield of ingredient
+         * @return AbstractRecipeBuilder
+         */
+        @RecipeBuilderMethodDescription
+        public AbstractRecipeBuilder<GSCrafting> input(IIngredient ingredient, double yield) {
+            this.yields.add(yield);
             return super.input(ingredient);
         }
 
         /**
-         * Set return Yield of upcoming Ingredient.
+         * Add Ingredient of recipe With ItemStack
          *
-         * @param yield return Yield of upcoming ingredients
-         * @return this RecipeBuilder
+         * @param ingredients crafting ingredients
+         * @param yield refund yield of ingredient
+         * @return AbstractRecipeBuilder
          */
-        @RecipeBuilderMethodDescription(field = "yield")
-        public RecipeBuilder setYield(double yield) {
-            this.yield = yield;
+        @RecipeBuilderMethodDescription
+        public AbstractRecipeBuilder<GSCrafting> input(double yield, IIngredient... ingredients) {
+            for (IIngredient ingredient : ingredients) {
+                this.input(ingredient, yield);
+            }
             return this;
         }
 
