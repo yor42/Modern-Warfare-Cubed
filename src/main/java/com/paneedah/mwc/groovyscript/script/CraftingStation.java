@@ -3,19 +3,18 @@ package com.paneedah.mwc.groovyscript.script;
 import com.cleanroommc.groovyscript.api.GroovyLog;
 import com.cleanroommc.groovyscript.api.IIngredient;
 import com.cleanroommc.groovyscript.api.documentation.annotations.*;
+import com.cleanroommc.groovyscript.helper.Alias;
 import com.cleanroommc.groovyscript.helper.recipe.AbstractRecipeBuilder;
 import com.cleanroommc.groovyscript.registry.VirtualizedRegistry;
 import com.paneedah.mwc.ProjectConstants;
 import com.paneedah.mwc.groovyscript.recipes.GSCrafting;
 import com.paneedah.weaponlib.crafting.CraftingEntry;
 import com.paneedah.weaponlib.crafting.CraftingGroup;
-import com.paneedah.weaponlib.crafting.CraftingRegistry;
 import com.paneedah.weaponlib.crafting.IModernCraftingRecipe;
 import net.minecraft.item.ItemStack;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -31,6 +30,11 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
     public void onReload() {
         this.removeScripted().forEach(this::removeRecipe);
         this.restoreFromBackup().forEach(this::addRecipe);
+    }
+
+    @Override
+    public List<String> getAliases() {
+        return Alias.generateOfClassAnd(CraftingStation.class, "AmmoPress");
     }
 
     /**
@@ -60,12 +64,9 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
      *
      * @param group CraftingGroup to remove all recipes inside. valid values = "GUN", "ATTACHMENT_NORMAL", "ATTACHMENT_MODIFICATION", "BULLET", "MAGAZINE"
      */
-    @MethodDescription(example = @Example("'ATTACHMENT_NORMAL'"), priority = 3000)
-    public void removeAllinGroup(String group) {
-        if (Arrays.stream(CraftingGroup.values()).noneMatch(g -> g.name().equals(group))) {
-            return;
-        }
-        removeAllinGroup(CraftingGroup.valueOf(group));
+    @MethodDescription(priority = 3000)
+    public void removeAllinGroup(CraftingGroup group) {
+        removeInGroupWithFilter((s) -> true, group);
     }
 
     /**
@@ -108,9 +109,12 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
         removeAllinGroup(MAGAZINE);
     }
 
-    @MethodDescription(priority = 3000)
-    public void removeAllinGroup(CraftingGroup group) {
-        removeInGroupWithFilter((s) -> true, group);
+    /**
+     * Remove ALL recipes of Grenade Category.
+     */
+    @MethodDescription()
+    public void removeAllGrenade() {
+        removeAllinGroup(GRENADE);
     }
 
     /**
@@ -119,12 +123,9 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
      * @param ingredient Output item of the recipe. recipe with matching output will be removed.
      * @param group      CraftingGroup to remove matching recipes inside. valid values = "GUN", "ATTACHMENT_NORMAL", "ATTACHMENT_MODIFICATION", "BULLET", "MAGAZINE"
      */
-    @MethodDescription(example = @Example("ore('oreDiamond'), 'ATTACHMENT_NORMAL'"))
-    public void removeInGroup(IIngredient ingredient, String group) {
-        if (Arrays.stream(CraftingGroup.values()).noneMatch(g -> g.name().equals(group))) {
-            return;
-        }
-        removeInGroup(ingredient, CraftingGroup.valueOf(group));
+    @MethodDescription()
+    public void removeInGroup(IIngredient ingredient, CraftingGroup group) {
+        removeInGroupWithFilter(ingredient, group);
     }
 
     /**
@@ -133,7 +134,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
      * @param ingredient Output item of the recipe. recipe with matching output will be removed.
      */
     @MethodDescription(example = @Example("ore('oreDiamond')"))
-    public void removeGun(IIngredient ingredient) {
+    public void removeByGun(IIngredient ingredient) {
         removeInGroup(ingredient, GUN);
     }
 
@@ -143,7 +144,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
      * @param ingredient Output item of the recipe. recipe with matching output will be removed.
      */
     @MethodDescription(example = @Example("ore('oreDiamond')"))
-    public void removeNormalAttachment(IIngredient ingredient) {
+    public void removeByNormalAttachment(IIngredient ingredient) {
         removeInGroup(ingredient, ATTACHMENT_NORMAL);
     }
 
@@ -153,7 +154,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
      * @param ingredient Output item of the recipe. recipe with matching output will be removed.
      */
     @MethodDescription(example = @Example("ore('oreDiamond')"))
-    public void removeModificationAttachment(IIngredient ingredient) {
+    public void removeByModificationAttachment(IIngredient ingredient) {
         removeInGroup(ingredient, ATTACHMENT_MODIFICATION);
     }
 
@@ -163,7 +164,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
      * @param ingredient Output item of the recipe. recipe with matching output will be removed.
      */
     @MethodDescription(example = @Example("ore('oreDiamond')"))
-    public void removeBullet(IIngredient ingredient) {
+    public void removeByBullet(IIngredient ingredient) {
         removeInGroup(ingredient, BULLET);
     }
 
@@ -173,12 +174,18 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
      * @param ingredient Output item of the recipe. recipe with matching output will be removed.
      */
     @MethodDescription(example = @Example("ore('oreDiamond')"))
-    public void removeMagazine(IIngredient ingredient) {
+    public void removeByMagazine(IIngredient ingredient) {
         removeInGroup(ingredient, MAGAZINE);
     }
 
-    public void removeInGroup(IIngredient ingredient, CraftingGroup group) {
-        removeInGroupWithFilter(ingredient, group);
+    /**
+     * Removes recipe that outputs matching item of given `ingredient` from grenade category.
+     *
+     * @param ingredient Output item of the recipe. recipe with matching output will be removed.
+     */
+    @MethodDescription(example = @Example("ore('oreDiamond')"))
+    public void removeByGrenade(IIngredient ingredient) {
+        removeInGroup(ingredient, GRENADE);
     }
 
     public void removeInGroupWithFilter(Predicate<ItemStack> ingredient, CraftingGroup group) {
@@ -189,18 +196,26 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
             }
         }
         for (IModernCraftingRecipe recipe : recipesToRemove) {
-            removeRecipe(recipe);
+            removeRecipeAndBackup(recipe);
         }
+    }
+
+    public void addRecipeAndBackup(IModernCraftingRecipe crafting) {
+        addRecipe(crafting);
+        this.addScripted(crafting);
+    }
+
+    public void removeRecipeAndBackup(IModernCraftingRecipe crafting) {
+        removeRecipe(crafting);
+        this.addBackup(crafting);
     }
 
     public void addRecipe(IModernCraftingRecipe crafting) {
         registerRecipe(crafting);
-        this.addScripted(crafting);
     }
 
     public void removeRecipe(IModernCraftingRecipe crafting) {
         deleteRecipeRegistry(crafting);
-        this.addBackup(crafting);
     }
 
     /**
@@ -216,6 +231,8 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
 
     @Property(property = "yield", comp = @Comp(gte = 0))
     @Property(property = "group", comp = @Comp(not = "null"))
+    @Property(property = "input", comp = @Comp(lte = 27))
+    @Property(property = "output", comp = @Comp(eq = 1))
     public static class RecipeBuilder extends AbstractRecipeBuilder<GSCrafting> {
 
         @Override
@@ -272,20 +289,6 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
             return this;
         }
 
-        /**
-         * Set Category of Recipe
-         *
-         * @param group name of the Group. valid values = "GUN", "ATTACHMENT_NORMAL", "ATTACHMENT_MODIFICATION", "BULLET", "MAGAZINE"
-         * @return this RecipeBuilder
-         */
-        @RecipeBuilderMethodDescription(field = "group", priority = 2000)
-        public RecipeBuilder setGroup(String group) {
-            if (Arrays.stream(CraftingGroup.values()).noneMatch(g -> g.name().equals(group))) {
-                return this;
-            }
-            return setGroup(CraftingGroup.valueOf(group));
-        }
-
         @RecipeBuilderMethodDescription(field = "group")
         public RecipeBuilder setGroupGun() {
             return setGroup(GUN);
@@ -311,6 +314,17 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
             return setGroup(MAGAZINE);
         }
 
+        @RecipeBuilderMethodDescription(field = "group")
+        public RecipeBuilder setGroupGrenade() {
+            return setGroup(GRENADE);
+        }
+
+        /**
+         * Set Category of Recipe
+         *
+         * @param group Group of the Recipe. valid values = "GUN", "ATTACHMENT_NORMAL", "ATTACHMENT_MODIFICATION", "BULLET", "MAGAZINE"
+         * @return this RecipeBuilder
+         */
         @RecipeBuilderMethodDescription(field = "group", priority = 3000)
         public RecipeBuilder setGroup(CraftingGroup group) {
             this.group = group;
@@ -337,7 +351,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
             }
 
             final GSCrafting recipe = new GSCrafting(this.output.get(0), this.group, entries.toArray(new CraftingEntry[0]));
-            craftingStation.addRecipe(recipe);
+            craftingStation.addRecipeAndBackup(recipe);
             return recipe;
         }
     }
