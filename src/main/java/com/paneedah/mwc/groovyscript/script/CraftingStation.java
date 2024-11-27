@@ -38,7 +38,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
     @MethodDescription(priority = 4000)
     public void removeAll() {
         for (CraftingGroup list : craftingMap.keySet()) {
-            this.removeInGroupWithFilter(e->true, list);
+            this.removeInGroupWithFilter(e -> true, list);
         }
     }
 
@@ -106,13 +106,14 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
 
     @MethodDescription(priority = 3000)
     public void removeAllinGroup(CraftingGroup group) {
-        removeInGroupWithFilter((s)->true, group);
+        removeInGroupWithFilter((s) -> true, group);
     }
 
     /**
      * Remove recipe that outputs matching item of given `ingredient` from given category.
+     *
      * @param ingredient Output item of the recipe. recipe with matching output will be removed.
-     * @param group CraftingGroup to remove matching recipes inside. valid values = "GUN", "ATTACHMENT_NORMAL", "ATTACHMENT_MODIFICATION", "BULLET", "MAGAZINE"
+     * @param group      CraftingGroup to remove matching recipes inside. valid values = "GUN", "ATTACHMENT_NORMAL", "ATTACHMENT_MODIFICATION", "BULLET", "MAGAZINE"
      */
     @MethodDescription(example = @Example("ore('oreDiamond'), 'ATTACHMENT_NORMAL'"))
     public void removeInGroup(IIngredient ingredient, String group) {
@@ -121,6 +122,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
 
     /**
      * Removes recipe that outputs matching item of given `ingredient` from gun category.
+     *
      * @param ingredient Output item of the recipe. recipe with matching output will be removed.
      */
     @MethodDescription(example = @Example("ore('oreDiamond')"))
@@ -130,6 +132,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
 
     /**
      * Removes recipe that outputs matching item of given `ingredient` from normal attachment category.
+     *
      * @param ingredient Output item of the recipe. recipe with matching output will be removed.
      */
     @MethodDescription(example = @Example("ore('oreDiamond')"))
@@ -139,6 +142,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
 
     /**
      * Removes recipe that outputs matching item of given `ingredient` from modification attachment category.
+     *
      * @param ingredient Output item of the recipe. recipe with matching output will be removed.
      */
     @MethodDescription(example = @Example("ore('oreDiamond')"))
@@ -148,6 +152,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
 
     /**
      * Removes recipe that outputs matching item of given `ingredient` from bullet category.
+     *
      * @param ingredient Output item of the recipe. recipe with matching output will be removed.
      */
     @MethodDescription(example = @Example("ore('oreDiamond')"))
@@ -157,6 +162,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
 
     /**
      * Removes recipe that outputs matching item of given `ingredient` from magazine category.
+     *
      * @param ingredient Output item of the recipe. recipe with matching output will be removed.
      */
     @MethodDescription(example = @Example("ore('oreDiamond')"))
@@ -201,7 +207,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
         return new RecipeBuilder();
     }
 
-    @Property(property = "yield", comp = @Comp(gte=0))
+    @Property(property = "yield", comp = @Comp(gte = 0))
     @Property(property = "group", comp = @Comp(not = "null"))
     public static class RecipeBuilder extends AbstractRecipeBuilder<GSCrafting> {
 
@@ -218,9 +224,9 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
             msg.add(validateYields(), "yields can not be less than 0!");
         }
 
-        private boolean validateYields(){
-            for(double value:this.yields){
-                if(value<0){
+        private boolean validateYields() {
+            for (double value : this.yields) {
+                if (value < 0) {
                     return true;
                 }
             }
@@ -239,7 +245,6 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
          * Add Ingredient of recipe With ItemStack
          *
          * @param ingredient crafting ingredient
-         *
          * @return AbstractRecipeBuilder
          */
         @Override
@@ -252,7 +257,6 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
          * Set return Yield of upcoming Ingredient.
          *
          * @param yield return Yield of upcoming ingredients
-         *
          * @return this RecipeBuilder
          */
         @RecipeBuilderMethodDescription(field = "yield")
@@ -265,7 +269,6 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
          * Set Category of Recipe
          *
          * @param group name of the Group. valid values = "GUN", "ATTACHMENT_NORMAL", "ATTACHMENT_MODIFICATION", "BULLET", "MAGAZINE"
-         *
          * @return this RecipeBuilder
          */
         @RecipeBuilderMethodDescription(field = "group", priority = 2000)

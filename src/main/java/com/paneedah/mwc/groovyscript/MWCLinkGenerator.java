@@ -1,6 +1,7 @@
 package com.paneedah.mwc.groovyscript;
 
 import com.cleanroommc.groovyscript.documentation.linkgenerator.BasicLinkGenerator;
+
 import static com.paneedah.mwc.ProjectConstants.NAME;
 import static com.paneedah.mwc.ProjectConstants.VERSION;
 
