@@ -86,7 +86,6 @@ like knowing which weapon is better or whether an attachment will be useful to y
 - Gas Detector's and some attachments won't unnecessarily hide your crosshair anymore
 - Reworked headers in the workbench (Workbench, Crafting, Inventory)
 
-
 ### Fixed
 
 - Fixed the default craftingmappings.json
