@@ -315,7 +315,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
         }
 
         @RecipeBuilderMethodDescription(field = "group")
-        public RecipeBuilder setGroupGrenade(String string) {
+        public RecipeBuilder setGroup(String string) {
             return setGroup(CraftingGroup.valueOf(string));
         }
 
