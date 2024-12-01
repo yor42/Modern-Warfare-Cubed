@@ -28,8 +28,8 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
 
     @Override
     public void onReload() {
-        this.removeScripted().forEach(CraftingRegistry::registerRecipe);
-        this.restoreFromBackup().forEach(CraftingRegistry::deleteRecipeRegistry);
+        this.removeScripted().forEach(CraftingRegistry::deleteRecipeRegistry);
+        this.restoreFromBackup().forEach(CraftingRegistry::registerRecipe);
     }
 
     @Override
@@ -53,7 +53,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
      * @param ingredient Target Ingredient. any recipe with matching output will be removed.
      */
     @MethodDescription(example = @Example("ore('oreDiamond')"), priority = 2000)
-    public void removeAllCategoryByOutput(IIngredient ingredient) {
+    public void removeByOutput(IIngredient ingredient) {
         for (CraftingGroup list : craftingMap.keySet()) {
             this.removeInGroupWithFilter(ingredient, list);
         }
@@ -264,10 +264,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
          */
         @RecipeBuilderMethodDescription(field = "input")
         public AbstractRecipeBuilder<GSCrafting> input(double yield, IIngredient ingredient) {
-            if (yield < 0) {
-                throw new IllegalArgumentException("Yield cannot be negative, yet we got: " + yield);
-            }
-            this.input.add(new CraftingEntry(ingredient.toMcIngredient(), ingredient.getAmount(), yield));
+            this.input.add(new CraftingEntry(ingredient.toMcIngredient(), ingredient.getAmount(), Math.max(0,yield)));
             return this;
         }
 
@@ -314,6 +311,11 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
         @RecipeBuilderMethodDescription(field = "group")
         public RecipeBuilder setGroupGrenade() {
             return setGroup(GRENADE);
+        }
+
+        @RecipeBuilderMethodDescription(field = "group")
+        public RecipeBuilder setGroupGrenade(String string) {
+            return setGroup(CraftingGroup.valueOf(string));
         }
 
         /**
