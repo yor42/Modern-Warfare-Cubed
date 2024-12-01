@@ -110,6 +110,7 @@ like knowing which weapon is better or whether an attachment will be useful to y
 - Removed proning
 - Removed unused `ItemAmmo`
 - Removed `ammoCounterBackgroundReverse` & `statusBarPosition` configs
+- Removed the S&W .500 Magnum
 
 ### Optimization
 
