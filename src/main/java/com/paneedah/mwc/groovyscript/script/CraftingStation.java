@@ -237,6 +237,7 @@ public class CraftingStation extends VirtualizedRegistry<IModernCraftingRecipe> 
             this.validateItems(msg, 0, 0, 1, 1);
             msg.add(this.group == null, "group must not be null!");
             msg.add(this.input.isEmpty(), "Size of the input should be greater than 0, yet it was 0.");
+            msg.add(this.input.stream().anyMatch(entry -> entry.getYield() < 0),"Yield values must be non-negative!");
         }
 
         @Property(defaultValue = "GUN", comp = @Comp(not = "null"))
