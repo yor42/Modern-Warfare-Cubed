@@ -84,6 +84,8 @@ like knowing which weapon is better or whether an attachment will be useful to y
 - Changed `ammoCounterSize` config to `ammunitionCounterSize`
 - Changed `ammoCounterX` & `ammoCounterY` configs to `ammunitionCounterOffsetX` & `ammunitionCounterOffsetY`
 - Gas Detector's and some attachments won't unnecessarily hide your crosshair anymore
+- Reworked headers in the workbench (Workbench, Crafting, Inventory)
+- Improved the blending of the smoke grenades smoke
 
 ### Fixed
 
@@ -110,6 +112,7 @@ like knowing which weapon is better or whether an attachment will be useful to y
 - Removed proning
 - Removed unused `ItemAmmo`
 - Removed `ammoCounterBackgroundReverse` & `statusBarPosition` configs
+- Removed the S&W .500 Magnum
 
 ### Optimization
 

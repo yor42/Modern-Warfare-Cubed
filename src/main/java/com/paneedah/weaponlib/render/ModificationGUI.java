@@ -55,7 +55,6 @@ public class ModificationGUI {
     private static final int SHEET_SIZE = 768;
 
 
-    private static final int TOOLTIP_COL_ERROR = 0x702b2b;
 
 
     private static final int[][] DEFAULT_POSITION = new int[][]{{-50, 50}, {120, 75}, {150, 0}, {100, -50},
@@ -1047,8 +1046,6 @@ public class ModificationGUI {
             // Translate to front
             GlStateManager.translate(0, 0, 1000);
 
-            // tooltip.addLine("fuck off");
-
             // Bind tooltip texture
             MC.getTextureManager().bindTexture(MODIFICATION_GUI_TEXTURES);
             setAlpha(0.5f);
@@ -1087,10 +1084,4 @@ public class ModificationGUI {
         }
 
     }
-
-
-    /*
-     * RENDER TOOLS
-     */
-
 }
