@@ -58,6 +58,10 @@ like knowing which weapon is better or whether an attachment will be useful to y
 - Added tooltips to attachments
 - Added new `enableStatusMessages` config
 - Added player item instance registry itemstack instance cache size to the F3 debug
+- **GroovyScript integration:**
+  - Added wiki
+  - Added helper methods to avoid typing enums strings
+  - Added more validations
 
 ### Changed
 
