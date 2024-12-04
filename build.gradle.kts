@@ -57,7 +57,7 @@ dependencies {
     implementation("dev.redstudio", "Red-Core", redCoreVersion)
 
     compileOnly(rfg.deobf("curse.maven:techguns-244201:2958103"))
-    implementation("com.cleanroommc", "groovyscript", groovyScriptVersion) {
+    compileOnly("com.cleanroommc", "groovyscript", groovyScriptVersion) {
         isTransitive = false
     }
 
