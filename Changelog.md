@@ -145,6 +145,7 @@ like knowing which weapon is better or whether an attachment will be useful to y
 - Props now use Red Core `AABBUtil`
 - Updated [Red Core](https://www.curseforge.com/minecraft/mc-mods/red-core) dependency to 0.6-Dev-8
 - Lombokified most of the codebase
+- Updated [foojay-resolver](https://github.com/gradle/foojay-toolchains) to version 0.9.0
 
 ## Modern Warfare Cubed Version 0.1.9 Changelog - 2024-11-25
 
