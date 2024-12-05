@@ -71,13 +71,8 @@ public final class CraftingStation extends VirtualizedRegistry<ICraftingRecipe> 
      * @param group CraftingGroup to remove all recipes inside. valid values = "GUN", "ATTACHMENT_NORMAL", "ATTACHMENT_MODIFICATION", "BULLET", "MAGAZINE"
      */
     @MethodDescription(priority = 3000)
-    public void removeByGroup(CraftingGroup group) {
+    public void removeAllInGroup(CraftingGroup group) {
         removeInGroupWithFilter((s) -> true, group);
-    }
-
-    @MethodDescription(priority = 3000)
-    public void removeByGroup(String group) {
-        removeInGroupWithFilter((s) -> true, CraftingGroup.valueOf(group));
     }
 
     /**
@@ -85,7 +80,7 @@ public final class CraftingStation extends VirtualizedRegistry<ICraftingRecipe> 
      */
     @MethodDescription()
     public void removeAllGun() {
-        removeByGroup(GUN);
+        removeAllInGroup(GUN);
     }
 
     /**
@@ -93,7 +88,7 @@ public final class CraftingStation extends VirtualizedRegistry<ICraftingRecipe> 
      */
     @MethodDescription()
     public void removeAllNormalAttachment() {
-        removeByGroup(ATTACHMENT_NORMAL);
+        removeAllInGroup(ATTACHMENT_NORMAL);
     }
 
     /**
@@ -101,7 +96,7 @@ public final class CraftingStation extends VirtualizedRegistry<ICraftingRecipe> 
      */
     @MethodDescription()
     public void removeAllModificationAttachment() {
-        removeByGroup(ATTACHMENT_MODIFICATION);
+        removeAllInGroup(ATTACHMENT_MODIFICATION);
     }
 
     /**
@@ -109,7 +104,7 @@ public final class CraftingStation extends VirtualizedRegistry<ICraftingRecipe> 
      */
     @MethodDescription()
     public void removeAllBullet() {
-        removeByGroup(BULLET);
+        removeAllInGroup(BULLET);
     }
 
     /**
@@ -117,7 +112,7 @@ public final class CraftingStation extends VirtualizedRegistry<ICraftingRecipe> 
      */
     @MethodDescription()
     public void removeAllMagazine() {
-        removeByGroup(MAGAZINE);
+        removeAllInGroup(MAGAZINE);
     }
 
     /**
@@ -125,7 +120,7 @@ public final class CraftingStation extends VirtualizedRegistry<ICraftingRecipe> 
      */
     @MethodDescription()
     public void removeAllGrenade() {
-        removeByGroup(GRENADE);
+        removeAllInGroup(GRENADE);
     }
 
     /**
@@ -137,11 +132,6 @@ public final class CraftingStation extends VirtualizedRegistry<ICraftingRecipe> 
     @MethodDescription()
     public void removeInGroupByOutput(IIngredient ingredient, CraftingGroup group) {
         removeInGroupWithFilter(ingredient, group);
-    }
-
-    @MethodDescription()
-    public void removeInGroupByOutput(IIngredient ingredient, String group) {
-        removeInGroupWithFilter(ingredient, CraftingGroup.valueOf(group));
     }
 
     /**
@@ -334,7 +324,7 @@ public final class CraftingStation extends VirtualizedRegistry<ICraftingRecipe> 
             return setGroup(GRENADE);
         }
 
-        @RecipeBuilderMethodDescription(field = "group", priority = 2500)
+        @RecipeBuilderMethodDescription(field = "group")
         public RecipeBuilder setGroup(String string) {
             return setGroup(CraftingGroup.valueOf(string));
         }
